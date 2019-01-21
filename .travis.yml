@@ -14,5 +14,5 @@ install:
   - pip install -r requirements.txt
 
 #the command below will manage the testing - set up at present to look at the
-# script:
-#  - will depend on our testing framework
+script:
+  - python manage.py test
