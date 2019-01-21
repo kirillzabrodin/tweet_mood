@@ -15,4 +15,4 @@ install:
 
 #the command below will manage the testing - set up at present to look at the
 script:
-  - python manage.py test
+  - python tweetwood/manage.py test
