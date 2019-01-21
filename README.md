@@ -1,2 +1,2 @@
-# tweet_mood
-An application for analysing  the emotions in tweets
+# Tweet Mood
+An application for analysing emotions in tweets
