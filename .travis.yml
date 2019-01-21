@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - 3.7
+
+env:
+  - DJANGO=2.1.5
+#the command below will be invoked to install any dependencies - don't
+#have any yet so it is commented out
+#install:
+# -pip3 install -r requirements.txt
+
+#the command below will manage the testing - set up at present to look at the
+# script:
+#  - will depend on our testing framework
