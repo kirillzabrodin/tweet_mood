@@ -11,6 +11,16 @@ An application for analysing the emotions in text
 * [Kirill Zabrodin](https://github.com/kirillzabrodin)
 
 ## User Stories
+```
+As a user,
+so I can pick what I content is being examined,
+I would like to be able to choose the content I put through the machine
+```
+```
+As a user,
+so I can pick up the moods of peoples words,
+I would like to receive the emotions in someones words
+```
 
 
 ## Getting started
