@@ -1,9 +1,19 @@
 language: python
 
 python:
-  - "3.7"
+  - 2.7
+  - 3.4
+  - 3.5
+  - 3.6
+
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
 
 env:
+  - DJANGO=1.11.18
   - DJANGO=2.1.5
 #the command below will be invoked to install any dependencies - don't
 #have any yet so it is commented out
