@@ -1,7 +1,6 @@
 language: python
 
 python:
-  - 2.7
   - 3.4
   - 3.5
   - 3.6
@@ -13,12 +12,10 @@ matrix:
       sudo: true
 
 env:
-  - DJANGO=1.11.18
   - DJANGO=2.1.5
 #the command below will be invoked to install any dependencies - don't
 #have any yet so it is commented out
 install:
-  - pip install -r requirements.txt
   - pip3 install -r requirements.txt
 
 #the command below will manage the testing - set up at present to look at the
