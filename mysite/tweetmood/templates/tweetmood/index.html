@@ -3,7 +3,7 @@
 {% block content %}
 <h1>How are you feeling?</h1>
 
-<form action="/text" method="post">
+<form action="/analysis" method="post">
 {% csrf_token %}
   <textarea name="text" rows="8" cols="80"></textarea>
 <br>

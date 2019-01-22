@@ -6,6 +6,6 @@ def index(request):
     return render(request, 'tweetmood/index.html')
 
 
-def text(request):
+def analysis(request):
     text = request.POST['text']
     return HttpResponse("You submitted:<br>" + text)
