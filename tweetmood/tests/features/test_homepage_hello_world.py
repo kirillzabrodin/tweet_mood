@@ -2,15 +2,15 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-class AccountTestCase(LiveServerTestCase):
+class HelloWorldTest(LiveServerTestCase):
 
     def setUp(self):
         self.selenium = webdriver.Firefox()
-        super(AccountTestCase, self).setUp()
+        super(HelloWorldTest, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
-        super(AccountTestCase, self).tearDown()
+        super(HelloWorldTest, self).tearDown()
 
     def test_register(self):
         selenium = self.selenium
