@@ -8,4 +8,4 @@ def index(request):
 
 def text(request):
     text = request.POST['text']
-    return HttpResponse("You submitted " + text)
+    return HttpResponse("You submitted:<br>" + text)
