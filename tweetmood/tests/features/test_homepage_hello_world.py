@@ -1,11 +1,14 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 
 class HelloWorldTest(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Firefox()
+        options = Options()
+        options.add_argument('-headless')
+        self.selenium = webdriver.Firefox(options=options)
         super(HelloWorldTest, self).setUp()
 
     def tearDown(self):
