@@ -11,6 +11,7 @@ env:
   - DJANGO=2.1.5
   global:
   - DJANGO_SETTINGS_MODULE='mysite.settings'
+  - CODECOV_TOKEN="a8e814d9-19c3-48f3-98ea-0ef43961a892"
 #the command below will be invoked to install any dependencies - don't
 #have any yet so it is commented out
 #the command below will manage the testing - set up at present to look at the
