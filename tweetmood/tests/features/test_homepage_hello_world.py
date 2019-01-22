@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 class AccountTestCase(LiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Firefox()
+        self.selenium = webdriver.Chrome()
         super(AccountTestCase, self).setUp()
 
     def tearDown(self):

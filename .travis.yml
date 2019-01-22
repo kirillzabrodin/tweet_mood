@@ -6,11 +6,8 @@ matrix:
       dist: xenial
       sudo: true
 
-env:
-  - MOZ_HEADLESS=1
-  - GECKODRIVER_VERSION=0.23.0
 addons:
-  firefox: 53.0.0
+  chrome: stable
 
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
