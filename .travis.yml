@@ -1,19 +1,21 @@
 language: python
-
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
-
+  - python: 3.7
+    dist: xenial
+    sudo: true
 env:
   matrix:
   - DJANGO=2.1.5
   global:
   - DJANGO_SETTINGS_MODULE='mysite.settings'
   - CODECOV_TOKEN="a8e814d9-19c3-48f3-98ea-0ef43961a892"
-#the command below will be invoked to install any dependencies - don't
-#have any yet so it is commented out
-#the command below will manage the testing - set up at present to look at the
 script:
-  - pytest
+- pytest
+deploy:
+  provider: heroku
+  api_key:
+    secure: dRlcPKPXBBvgT3NIAPJjZ2d9uwN4cSuX1VI+LQw9JCZDydUwxzWXNd7rRxusfM5sCg4y+WqZ9pIW27egIP0eGYua+9r9ON2hMdUbXxu8QRDmUP9rZW8vrcmluti+Kf7xMPwgi0LRbLap644tB3nkt6lwQm81ek+GUvsTYGPFkrOzdKA/nVXV/QFSPtghiO50O4iag2Pq2Sj0oc1RglmrfAIAo3cp+ZnF1fJBTR+Ynw/51F1xqUvbWfW/S9bh+5o07igFEEVKhAkHrBsFgFdGRL0xRnaCy7Tatjp8qujW1ZiPAf6ZaJoKGq9OLbmKiwgFNAczZqsKZolcKrzyxEo6LjSZSCNWoICo/F05kifQr5zDEGZ7vy1pmaEOR1HSIHI/C1gEiZEqG5ZMmTux+7X+rPkzDSKlYLR4IxbXYofnPEcvUiVW1QI4tEqlWwnb+02WoR8xzxoNWoJ3K/BbXMohSGCNxWvhA/UjBbDoEWwKIz+tppCtulGZaPC0qsFX7fMCL7MV0+Tx9LhmjL+thl4CbSc8Wf96RV655G/7baFR7x80peXNEU108iyiN4Iz5d5cXXMDEnH+Xv3iu+1jLtBCPoBv4g6UE6VDcerQvczA4mk27jpQBnjwyxyfDLvvW6hfqtEr3Q8KD4va6JGZdvP3FvGVQVVKKgxBZZYihQsRPHM=
+  app:
+    master: tweet-mood
+    heroku: tweet-mood-testing
