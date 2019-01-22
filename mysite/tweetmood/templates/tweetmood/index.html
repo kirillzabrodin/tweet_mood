@@ -3,9 +3,10 @@
 {% block content %}
 <h1>How are you feeling?</h1>
 
-<form>
+<form action="/text" method="post">
+{% csrf_token %}
   <textarea name="text" rows="8" cols="80"></textarea>
 <br>
-  <input type="submit" value="Send for analysis"
+  <input type="submit" value="Send for analysis">
 </form>
 {% endblock %}
