@@ -1,0 +1,18 @@
+language: python
+
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+
+env:
+  matrix:
+  - DJANGO=2.1.5
+  global:
+  - DJANGO_SETTINGS_MODULE='mysite.settings'
+#the command below will be invoked to install any dependencies - don't
+#have any yet so it is commented out
+#the command below will manage the testing - set up at present to look at the
+script:
+  - pytest
