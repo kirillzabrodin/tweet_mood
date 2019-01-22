@@ -9,6 +9,12 @@ matrix:
 env:
   - MOZ_HEADLESS=1
   - GECKODRIVER_VERSION=0.21.0
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 addons:
   firefox: latest
 
