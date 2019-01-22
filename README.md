@@ -1,4 +1,4 @@
-# TweetMood   [![Build Status](https://travis-ci.org/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.org/kirillzabrodin/tweet_mood)
+# TweetMood   [![Build Status](https://travis-ci.org/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.org/kirillzabrodin/tweet_mood)   [![codecov](https://codecov.io/gh/kirillzabrodin/tweet_mood/branch/master/graph/badge.svg)](https://codecov.io/gh/kirillzabrodin/tweet_mood)
 An application for analysing the emotions in text
 
 ### [Team](https://github.com/kirillzabrodin/tweet_mood#team) |  [User stories](https://github.com/kirillzabrodin/tweet_mood#user-stories) |  [Getting started](https://github.com/kirillzabrodin/tweet_mood#getting-started) |  [Usage](https://github.com/kirillzabrodin/tweet_mood#usage) |  [Testing](https://github.com/kirillzabrodin/tweet_mood#testing) |   [Deployment](https://github.com/kirillzabrodin/tweet_mood#deployment) |   [Our approach](https://github.com/kirillzabrodin/tweet_mood#our-approach) |  [Contributing](https://github.com/kirillzabrodin/tweet_mood#contributing)
