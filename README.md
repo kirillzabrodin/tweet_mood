@@ -18,13 +18,17 @@ I would like to receive the emotions in someones words
 
 As a User,
 so I can pick what I content is being examined,
-I would like to be able to choose the content that is analyzed
+I would like to be able to choose the content that is analysed
 ```
 
-
-
 ## Getting started
+Clone the repo with ```git clone``` and the appropriate url.
 
+Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
+
+Run ```pip install -r requirements.txt```
+
+Run ```python ./manage.py runserver```
 
 ## Usage
 
