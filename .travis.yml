@@ -6,8 +6,10 @@ matrix:
       dist: xenial
       sudo: true
 
+env:
+  - MOZ_HEADLESS=1
 addons:
-  firefox: "57.0.0"
+  firefox: latest
 
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
@@ -26,8 +28,3 @@ env:
 #the command below will manage the testing - set up at present to look at the
 script:
   - pytest
-
-
-selenium==3.141.0
-firefox min == 57
-geckodriver = 0.21.0
