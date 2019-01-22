@@ -1,0 +1,12 @@
+{% extends "tweetmood/header.html" %}
+
+{% block content %}
+<h1>How are you feeling?</h1>
+
+<form action="/analysis" method="post">
+{% csrf_token %}
+  <textarea name="text" rows="8" cols="80"></textarea>
+<br>
+  <input type="submit" value="Send for analysis">
+</form>
+{% endblock %}

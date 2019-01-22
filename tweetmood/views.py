@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 def index(request):
-    return HttpResponse("<h2>Hello world<h2>")
+    return render(request, 'tweetmood/index.html')
+
+
+def analysis(request):
+    text = request.POST['text']
+    return HttpResponse("You submitted:<br>" + text)
