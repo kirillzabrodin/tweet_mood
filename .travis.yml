@@ -8,6 +8,7 @@ matrix:
 
 env:
   - MOZ_HEADLESS=1
+  - GECKODRIVER_VERSION=0.23.0
 addons:
   firefox: latest
 
