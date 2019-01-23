@@ -93,7 +93,7 @@
 <p id="t9" class="stm run hide_run">    <span class="nam">text</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">GET</span><span class="op">[</span><span class="str">'text'</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t10" class="stm run hide_run">    <span class="nam">tone_analyzer</span> <span class="op">=</span> <span class="nam">ToneAnalyzer</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t11" class="stm run hide_run">    <span class="nam">analysed_text</span> <span class="op">=</span> <span class="nam">tone_analyzer</span><span class="op">.</span><span class="nam">send_for_analysis</span><span class="op">(</span><span class="nam">text</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t12" class="stm run hide_run">    <span class="key">return</span> <span class="nam">HttpResponse</span><span class="op">(</span><span class="str">"You submitted:&lt;br>"</span> <span class="op">+</span> <span class="nam">text</span> <span class="op">+</span> <span class="nam">analysed_text</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t12" class="stm run hide_run">    <span class="key">return</span> <span class="nam">HttpResponse</span><span class="op">(</span><span class="str">"You submitted:&lt;br>"</span> <span class="op">+</span> <span class="nam">text</span> <span class="op">+</span> <span class="str">"&lt;br>"</span> <span class="op">+</span> <span class="str">"Your results:&lt;br>"</span> <span class="op">+</span> <span class="nam">analysed_text</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -104,7 +104,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.2</a>,
-            created at 2019-01-23 12:23
+            created at 2019-01-23 13:14
         </p>
     </div>
 </div>
