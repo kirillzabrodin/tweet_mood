@@ -7,6 +7,20 @@ matrix:
       sudo: true
 
 env:
+  - MOZ_HEADLESS=1
+  - GECKODRIVER_VERSION=0.23.0
+
+addons:
+  firefox: latest
+
+before_install:
+  - pip install -r requirements.txt
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
+
+env:
   matrix:
   - DJANGO=2.1.5
   global:
