@@ -2,3 +2,5 @@
 htmlcov/*
 .coverage
 .pytest_cache
+geckodriver.log
+*.DS_Store
