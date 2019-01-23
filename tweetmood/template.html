@@ -1,0 +1,22 @@
+<form   method="POST" role="form" >
+   {% csrf_token %}
+   <div class="tab-content">
+      <div class="tab-pane active" role="tabpanel" id="step1">
+         <div class="mobile-grids">
+            <div class="mobile-left text-center">
+               <img src="{% static 'images/mobile.png' %}" alt="" />
+            </div>
+            <div class="mobile-right">
+               <h4>Enter the text you want analised</h4>
+               <!-- <label>+91</label><input type="text"  name="mobile_number" class="mobile-text" value="asdfasd" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""> -->
+               <label>+91</label><input type="text"  name="mobile_number" class="mobile-text" value="" >
+            </div>
+         </div>
+         <ul class="list-inline pull-right">
+            <li><button type="button" class="mob-btn btn btn-primary btn-info-full" data-dismiss="modal">Finish</button></li>
+         </ul>
+      </div>
+      <div class="clearfix"></div>
+      <input type="submit" value="submit"/>
+   </div>
+</form>
