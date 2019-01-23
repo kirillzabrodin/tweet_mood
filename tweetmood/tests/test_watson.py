@@ -1,8 +1,19 @@
 from django.test import TestCase
-import mock
-import pytest
-from pytest_mock import mocker
-from ..watson import ToneAnalyzer
+import unittest
+from doubles import ObjectDouble, allow, expect
+from unittest import mock
+from unittest.mock import patch
+from watson_developer_cloud import ToneAnalyzerV3
+from ..watson import Watson
+from unittest.mock import MagicMock
+
+class WatsonUnitTests(unittest.TestCase):
+    def test_send_for_analysis(self):
+        tone_analyzer = MagicMock()
+        watson = Watson(tone_analyzer)
+        watson.send_for_analysis('text')
+        tone_analyzer.tone.assert_called_with({ 'text': 'text' },
+        'application/json')
 
 #  1
 # expect subject to respond to send_for_analysis
