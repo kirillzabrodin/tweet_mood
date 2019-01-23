@@ -1,8 +1,12 @@
 atomicwrites==1.2.1
 attrs==18.2.0
+capybara-py==0.1.6
 certifi==2018.11.29
 chardet==3.0.4
+<<<<<<< HEAD
 codecov==2.0.15
+=======
+>>>>>>> 50e9a264bdb94a761931ffd145fdc1a9d2a66a92
 coverage==4.5.2
 dj-database-url==0.5.0
 dj-static==0.0.6
@@ -21,9 +25,22 @@ py==1.7.0
 pytest==4.1.1
 pytest-cov==2.6.1
 pytest-django==3.4.5
+<<<<<<< HEAD
+=======
+python-dateutil==2.7.5
+python-mimeparse==1.6.0
+python-subunit==1.3.0
+>>>>>>> 50e9a264bdb94a761931ffd145fdc1a9d2a66a92
 pytz==2018.9
 requests==2.21.0
 six==1.12.0
 static3==0.7.0
 urllib3==1.24.1
+<<<<<<< HEAD
 whitenoise==4.1.2
+=======
+virtualenv==16.2.0
+watson-developer-cloud==2.5.4
+websocket-client==0.48.0
+xpath-py==0.1.2
+>>>>>>> 50e9a264bdb94a761931ffd145fdc1a9d2a66a92

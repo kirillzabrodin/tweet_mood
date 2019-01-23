@@ -24,6 +24,10 @@ I would like to be able to choose the content that is analysed
 ## Getting started
 Set up a project directory and clone the repo with ```git clone``` and the appropriate url.
 
+You will need some API keys, both locally and in your Travis CI settings:
+* A Django SECRET_KEY (found in settings.py) - this is automatically generated on a new Django set-up, and can be a random string.  Keep yours hidden(for example, in this project settings.py points to a local environmental variable)
+* An API for Watson (found in tweetmood/watson.py) - see [] for more information on Watson
+
 Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
 
 Run ```pip install -r requirements.txt```

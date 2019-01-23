@@ -24,7 +24,7 @@ env:
   - DJANGO_SETTINGS_MODULE='mysite.settings'
   - CODECOV_TOKEN="a8e814d9-19c3-48f3-98ea-0ef43961a892"
 script:
-  - pytest
+- pytest
 after_success:
   - codecov
 
