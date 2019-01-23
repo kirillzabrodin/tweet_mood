@@ -24,5 +24,4 @@ def result(request):
         return HttpResponse("You did not submit to analysis")
     else:
         session = [request.session['text'], request.session['analysed_text']]
-        #request.session.flush()
         return HttpResponse("You submitted:<br>" + session[0] + "<br>" + "Your results:<br>" + session[1])
