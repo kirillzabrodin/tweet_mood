@@ -7,5 +7,5 @@ def index(request):
 
 
 def analysis(request):
-    text = request.POST['text']
+    text = request.GET['text']
     return HttpResponse("You submitted:<br>" + text)
