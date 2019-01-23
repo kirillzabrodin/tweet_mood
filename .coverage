@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 !coverage.py: This is a private format, don't read it directly!{"lines":{"/Users/jamesdewinton/Projects/tweet_mood/mysite/__init__.py":[1],"/Users/jamesdewinton/Projects/tweet_mood/tweetmood/__init__.py":[1],"/Users/jamesdewinton/Projects/tweet_mood/tweetmood/models.py":[1],"/Users/jamesdewinton/Projects/tweet_mood/tweetmood/admin.py":[1],"/Users/jamesdewinton/Projects/tweet_mood/tweetmood/views.py":[1,2,5,6]}}
+=======
+!coverage.py: This is a private format, don't read it directly!{"lines":{"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/mysite/__init__.py":[1],"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/tweetmood/__init__.py":[1],"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/tweetmood/models.py":[1],"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/tweetmood/admin.py":[1],"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/tweetmood/views.py":[1,2,3,5,8,6,9,10,11,12],"/Users/chris/CodeProjects/Makers/wk-11/tweet_mood/tweetmood/watson.py":[1,2,3,5,7,9,16,10,11,12,13,17,18,19,21]}}
+>>>>>>> 1415d0523bb30c53d5d9cd5a8f9c8173f0bb1128
