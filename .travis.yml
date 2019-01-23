@@ -1,19 +1,24 @@
 language: python
-
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
-
+  - python: 3.7
+    dist: xenial
+    sudo: true
 env:
   matrix:
   - DJANGO=2.1.5
   global:
   - DJANGO_SETTINGS_MODULE='mysite.settings'
   - CODECOV_TOKEN="a8e814d9-19c3-48f3-98ea-0ef43961a892"
-#the command below will be invoked to install any dependencies - don't
-#have any yet so it is commented out
-#the command below will manage the testing - set up at present to look at the
+addons:
+  firefox: latest
+before_install:
+- pip install -r requirements.txt
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
 script:
-  - pytest
+- pytest
+after_success:
+- codecov
