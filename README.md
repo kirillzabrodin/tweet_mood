@@ -32,7 +32,7 @@ Run ```python ./manage.py runserver```
 
 This defaults to port 8000, so open ```localhost:8000``` in your browser.
 
-You will want to hide your SECRET_KEY and call it to settings.py.
+You will want to set and hide your SECRET_KEY (found in settings.py).
 
 ## Usage
 
