@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .watson import Watson
-import json
+from .watson_formatter import WatsonFormatter
 
 
 def index(request):
@@ -12,7 +12,7 @@ def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
         watson = Watson()
-        analysed_text = json.dumps(watson.send_for_analysis(text))
+        analysed_text = watson.send_for_analysis(text)
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
@@ -24,6 +24,6 @@ def result(request):
     if 'text' not in request.session:
         return HttpResponse("You did not submit to analysis")
     else:
-        session = [request.session['text'], request.session['analysed_text']]
-        #request.session.flush()
-        return HttpResponse("You submitted:<br>" + session[0] + "<br>" + "Your results:<br>" + session[1])
+        session = request.session['analysed_text']
+        text = request.session["text"]
+        return render(request, 'tweetmood/results.html', {'session' : session, "text" : text})

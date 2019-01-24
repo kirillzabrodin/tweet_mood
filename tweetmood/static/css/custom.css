@@ -28,3 +28,7 @@ h1 {
 #city-form-input {
   width: 100%;
 }
+
+#results {
+  color: white;
+}
