@@ -18,7 +18,7 @@ class HelloWorldTest(LiveServerTestCase):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         body_text = selenium.find_element_by_tag_name('body').text
-        assert 'How are you feeling?' in body_text
+        assert 'how are you feeling?' in body_text
 
     def test_button(self):
         selenium = self.selenium
