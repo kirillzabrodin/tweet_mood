@@ -4570,6 +4570,10 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+.navbar-custom {
+    background-color: #ffd700;
+}
+
 .card {
   position: relative;
   display: -ms-flexbox;

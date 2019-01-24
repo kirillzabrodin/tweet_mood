@@ -1,29 +1,32 @@
 {% extends "tweetmood/header.html" %}
 
 {% block content %}
-
-<div id="container" class="container">
-  <div class="row">
-      <div class="col-sm-10 offset-sm-1 text-center">
-
-<h2 class="display-3">How are you feeling?</h2>
-
-<div class="info-form">
-
-<form action="/analysis" method="post" class="form-inline justify-content-center">
-{% csrf_token %}
-<div class="form-group">
-  <textarea name="text" rows="8" cols="80" class="form-control"></textarea>
+        <!-- how are you feeling form -->
+        <div id="how-are-you-feeling-form" class="container text-center">
+          <div class="col-lg-6 offset-lg-3"></div>
+            <div class="row justify-content-center">
+            <form action="/analysis" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label id="how-are-you-feeling-label" for="textarea">how are <em>you</em> feeling?</label>
+                <textarea name="text" class="form-control" id="textarea" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-custom btn-block mb-2">submit for analysis</button>
+            </form>
+          </div>
+        </div>
+        <!-- how is feeling right now form -->
+        <div class="container">
+          <div class="row col-md-4 offset-md-4 text-center">
+            <form class="form-inline" action="/analysis" method="post">
+              <h1>How does <input class="form-control" id="city-form-input" type="text" name="text" value=""> feel right now?</h1>
+              <button type="submit" class="btn btn-custom btn-block mb-2">click to find out</button>
+            </form>
+          </div>
+        </div>
+      <!-- divs below here are from header file -->
+      </div>
+    </div>
   </div>
-<br>
-<p>
-  <input name="analyse" type="submit" value="Send for analysis" class="form-control">
-  </p>
-</form>
-
-
-</div>
-</div>
-</div>
 </div>
 {% endblock %}
