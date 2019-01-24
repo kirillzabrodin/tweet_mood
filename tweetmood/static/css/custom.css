@@ -1,0 +1,30 @@
+body {
+  font-size: 40px;
+  background-image: url("./img/aerial-bridge-buildings-50631.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+#london-input-form {
+  margin-top: 200px;
+  width: 100%;
+}
+
+h1 {
+  color: white;
+}
+
+.btn-custom {
+  background-color: #ffd700;
+}
+
+.btn-custom:hover {
+  background-color: black;
+  color: #ffd700;
+}
+
+#city-form-input {
+  width: 100%;
+}

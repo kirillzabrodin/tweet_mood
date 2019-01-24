@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title>tweetmood</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <nav class="navbar navbar-custom justify-content-center">
+    <span class="navbar-brand mb-0 h1"><em>tweetmood</em></span>
+</nav>
+</div>
     {% block content %}
     {% endblock %}
   </body>
+
 </html>

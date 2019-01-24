@@ -10,17 +10,18 @@ class HelloWorldTest(LiveServerTestCase):
         self.selenium = webdriver.Firefox(options=options)
         super(HelloWorldTest, self).setUp()
 
+
     def tearDown(self):
         self.selenium.quit()
         super(HelloWorldTest, self).tearDown()
 
-    def test_register(self):
+    def test_how_does_london_feel(self):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         body_text = selenium.find_element_by_tag_name('body').text
-        assert 'How are you feeling?' in body_text
+        assert 'How does London feel about right now?' in body_text
 
-    def test_button(self):
+    def test_submit_button_is_show(self):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
@@ -29,11 +30,13 @@ class HelloWorldTest(LiveServerTestCase):
         body_text = selenium.find_element_by_tag_name('body').text
         assert 'Test' in body_text
 
+
     def test_no_analysis_shortcut(self):
         selenium = self.selenium
         selenium.get(self.live_server_url + '/analysis')
         body_text = selenium.find_element_by_tag_name('body').text
         assert 'You did not submit to analysis' in body_text
+
 
     def test_no_result_shortcut(self):
         selenium = self.selenium

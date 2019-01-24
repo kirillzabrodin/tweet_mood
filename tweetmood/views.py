@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .watson import ToneAnalyzer
+from .watson import Watson
+import json
 
 
 def index(request):
@@ -10,8 +11,8 @@ def index(request):
 def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
-        tone_analyzer = ToneAnalyzer()
-        analysed_text = tone_analyzer.send_for_analysis(text)
+        watson = Watson()
+        analysed_text = json.dumps(watson.send_for_analysis(text))
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
