@@ -25,4 +25,5 @@ def result(request):
         return HttpResponse("You did not submit to analysis")
     else:
         session = request.session['analysed_text']
-        return render(request, 'tweetmood/results.html', {'session' : session})
+        text = request.session["text"]
+        return render(request, 'tweetmood/results.html', {'session' : session, "text" : text})
