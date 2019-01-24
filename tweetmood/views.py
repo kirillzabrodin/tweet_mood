@@ -11,7 +11,7 @@ def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
         watson = Watson()
-        watson = watson.send_for_analysis(text)
+        watson = json.dumps(watson.send_for_analysis(text))
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
