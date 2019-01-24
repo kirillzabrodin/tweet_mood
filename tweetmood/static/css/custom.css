@@ -1,17 +1,15 @@
 body {
   font-size: 40px;
-  background-image: url("./img/earth-lights-world-41949.jpg");
+  background-image: url("./img/aerial-bridge-buildings-50631.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
-#how-are-you-feeling-form {
-  margin-top: 100px;
-  padding: 10px;
-  color: white;
-}
-
-#how-are-you-feeling-label {
-  font-size: 20px;
-  color: white;
+#london-input-form {
+  margin-top: 200px;
+  width: 100%;
 }
 
 h1 {

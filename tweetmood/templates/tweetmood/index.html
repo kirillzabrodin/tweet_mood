@@ -1,27 +1,13 @@
 {% extends "tweetmood/header.html" %}
 
 {% block content %}
-        <!-- how are you feeling form -->
-        <div id="how-are-you-feeling-form" class="container text-center">
-          <div class="col-lg-6 offset-lg-3"></div>
-            <div class="row justify-content-center">
-            <form action="/analysis" method="post">
-              {% csrf_token %}
-              <div class="form-group">
-                <label id="how-are-you-feeling-label" for="textarea">how are <em>you</em> feeling?</label>
-                <textarea name="text" class="form-control" id="textarea" rows="3"></textarea>
-              </div>
-              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">submit for analysis</button>
-            </form>
-          </div>
-        </div>
         <!-- how is feeling right now form -->
-        <div class="container">
-          <div class="row col-md-4 offset-md-4 text-center">
+        <div class="container" id="london-input-form">
+          <div class="row col-md-6 offset-md-3 text-center">
             <form class="form-inline" action="/analysis" method="post">
               {% csrf_token %}
-              <h1>How does <input class="form-control" id="city-form-input" type="text" name="text" value=""> feel right now?</h1>
-              <button type="submit" class="btn btn-custom btn-block mb-2">click to find out</button>
+              <h1>How does London feel about <input class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
+              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">click to find out</button>
             </form>
           </div>
         </div>
