@@ -118,7 +118,7 @@ USE_TZ = True
 print("Hello heroku")
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = "/static/"
+STATIC_URL = "/staticfoo/"
 print("static root: |" + STATIC_ROOT + "|")
 print(STATIC_ROOT)
 # Configure Django App for Heroku.
