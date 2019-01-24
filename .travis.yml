@@ -24,7 +24,9 @@ after_success:
 - codecov
 deploy:
   provider: heroku
-  on: heroku
+  on:
+    repo: kirillzabrodin/tweet_mood
+    branch: master
   api_key:
     secure: LPQZiXatlMyakfBiUduhMKEMnlRrJ7oZkl4yB4ZW11hEtCdiPBsM4usZI1vnmHWW3ocG7DUG6StdZbrsvVYLJjb6/SolDmX0QC/IEA0LB17wQ2UZjrp0QjvCIMiMdtdMxwEWwwwRpz2zLnQ0vpRaSi4PedB7P0HJPjd0V2P529VCJjQ2XTO3jSnzlyjNkSzWR5znlJk+m17LSoke1aS2yipeKysrMcjARMBhuSBoNPkhsRhh8q4vKk4Km1lslDcYLMtvNKWfTe3i7w6lf52S/DKBJhv/pwWRGKfo8rJi0mzPQnHYL3wUkjrdrB4JO6GE9o6gwiMAZlUnYDleRjyXC50cI5ltzI/vvsOiCWiA+gfDAp27KBTSTMe+dAz0kiqDVvp2trigRpdNIPB8GEBdID1lPcEN61YO4gXlvDhzap1atJMZ8RqkFXMW5XTshnecI44PuZ4ryNv98VQVmulWZ2Gcd+rGq82vJ9JEEJHaXtjIu7/IwFcr3gov1dV9w+mRqn/HAfX6rlZ66wMfagdYNb9w0KVD+gEz4O6iCPBiBqqhmpdqiBn6yJtWKNPUMDX+l50Oaq9qaBqQ9aq4/mB22o3dQr2YXMdYEDmVoA9XHaZbdiroA6/haCEv93XR1uDLdURUoDL2cl3vIJR+DqFmZqiM7BLhw3UOBbKwCzAu6xA=
   app: tweet-mood
