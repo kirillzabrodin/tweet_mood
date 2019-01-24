@@ -1,0 +1,32 @@
+body {
+  font-size: 40px;
+  background-image: url("./img/earth-lights-world-41949.jpg");
+}
+
+#how-are-you-feeling-form {
+  margin-top: 100px;
+  padding: 10px;
+  color: white;
+}
+
+#how-are-you-feeling-label {
+  font-size: 20px;
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+.btn-custom {
+  background-color: #ffd700;
+}
+
+.btn-custom:hover {
+  background-color: black;
+  color: #ffd700;
+}
+
+#city-form-input {
+  width: 100%;
+}

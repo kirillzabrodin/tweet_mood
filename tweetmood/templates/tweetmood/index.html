@@ -1,12 +1,33 @@
 {% extends "tweetmood/header.html" %}
 
 {% block content %}
-<h1>How are you feeling?</h1>
-
-<form action="/analysis" method="post">
-{% csrf_token %}
-  <textarea name="text" rows="8" cols="80"></textarea>
-<br>
-  <input name="analyse" type="submit" value="Send for analysis">
-</form>
+        <!-- how are you feeling form -->
+        <div id="how-are-you-feeling-form" class="container text-center">
+          <div class="col-lg-6 offset-lg-3"></div>
+            <div class="row justify-content-center">
+            <form action="/analysis" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label id="how-are-you-feeling-label" for="textarea">how are <em>you</em> feeling?</label>
+                <textarea name="text" class="form-control" id="textarea" rows="3"></textarea>
+              </div>
+              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">submit for analysis</button>
+            </form>
+          </div>
+        </div>
+        <!-- how is feeling right now form -->
+        <div class="container">
+          <div class="row col-md-4 offset-md-4 text-center">
+            <form class="form-inline" action="/analysis" method="post">
+              {% csrf_token %}
+              <h1>How does <input class="form-control" id="city-form-input" type="text" name="text" value=""> feel right now?</h1>
+              <button type="submit" class="btn btn-custom btn-block mb-2">click to find out</button>
+            </form>
+          </div>
+        </div>
+      <!-- divs below here are from header file -->
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
