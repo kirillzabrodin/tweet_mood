@@ -1,7 +1,7 @@
 import json
 from watson_developer_cloud import ToneAnalyzerV3
 import os
-
+from django.http import HttpResponse
 api_key = os.environ.get('WATSON_TONE_ANALYZER')
 
 class ToneAnalyzer:
