@@ -1,1 +1,1 @@
-web: gunicorn tweet_mood.wsgi
+web: gunicorn mysite.wsgi
