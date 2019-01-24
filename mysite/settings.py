@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('TWEETMOOD_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'https://sheltered-peak-14777.herokuapp.com/']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'https://sheltered-peak-14777git.herokuapp.com/']
 
 # Application definition
 
