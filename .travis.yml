@@ -32,6 +32,3 @@ deploy:
   on:
     repo: kirillzabrodin/tweet_mood
     branch: master
-  on:
-    repo: kirillzabrodin/tweet_mood
-    branch: heroku
