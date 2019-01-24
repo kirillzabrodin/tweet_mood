@@ -24,8 +24,6 @@ after_success:
 - codecov
 deploy:
   provider: heroku
-  app:
-    master: tweet-mood
-    heroku: tweet-mood
+  on: heroku
   api_key:
     secure: jC44EvJp/ctisoIIZ+oX2nMkrWIsMue9gqt6daFTgs4EIX3/Sin8qYpXxN+kK1cchJivmo/QEdej6+tSm/qrlCZr0ACTu6PjNgQVpwDnFFzGmWiqln6ehmm62GENFKNffsgSJmwk9opG0Ad7PAoYm9EJUR8meFvZRMDupyS1uEQBsLRvk+sTJTrCOJqjnbvmBmDeOGpVGWHMLNg2HC/q9F1CrVX3SjoeQDHHlRV7vaotxlFWFDbpndLmi6rbsFqUO7sfx2UH+glZVTrun3wlEOFTdbsGXEMtG0D+00UmCaJllODTVE+IE9/p/BjletHXfBDyGPVakK50peASmra3GmFjHQ+zbEW/npyz0FkWp+WjupE3yvwOrDi54PbvmNgZ/1lz1Uhgi/LMG2SYnCy4mY1ut1m9qoDjQdkIWdHYGm86vZX7zifLSMnstZaDKGvJNyWXC9R4Y0kvrEzPrvBlCChoeycEWzduGhCJ1i+wmcSOdWCnKLMju++rwB4XL2aYbrG3rkoXVxMrkkOQ6JhHCRmKng07bEVCfZWpINIrqnuEBuw7tRyAiEIkhnOOjoR1pV8qfP2364d55DWmSdb118u8hKaU5TlOyFkS9ZHQGjzW/+9f1WC2Ph2wN24+Yz7EV0IMF+dyE7r4P3lEZYmVhyOIGhpH95IJV9X4kQku4qE=
