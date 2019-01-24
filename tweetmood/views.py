@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .watson import Watson
-from .watson_formatter import WatsonFormatter
-
 
 def index(request):
     return render(request, 'tweetmood/index.html')
