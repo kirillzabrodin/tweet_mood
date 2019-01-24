@@ -4,9 +4,9 @@
         <!-- how is feeling right now form -->
         <div class="container" id="london-input-form">
           <div class="row col-md-6 offset-md-3 text-center">
-            <ul>
-              {{ session.document_tone.tones] }}
-            </ul>
+            <ul>{% for tone in session.document_tone.tones %}
+              <li>{{tone.tone_name}} : {{tone.score}}</li>
+            </ul>{% endfor %}
         </div>
     </div>
   </div>
