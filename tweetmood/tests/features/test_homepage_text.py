@@ -15,15 +15,13 @@ class HelloWorldTest(LiveServerTestCase):
         self.selenium.quit()
         super(HelloWorldTest, self).tearDown()
 
-
-    def test_register(self):
+    def test_how_are_you_feeling(self):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         body_text = selenium.find_element_by_tag_name('body').text
         assert 'how are you feeling?' in body_text
 
-
-    def test_button(self):
+    def test_submit_button_is_show(self):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
