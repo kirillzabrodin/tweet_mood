@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .watson import ToneAnalyzer
+from .watson import Watson
+import json
 
 
 def index(request):
@@ -11,7 +12,7 @@ def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
         watson = Watson()
-        watson = json.dumps(watson.send_for_analysis(text))
+        analysed_text = json.dumps(watson.send_for_analysis(text))
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
@@ -24,4 +25,5 @@ def result(request):
         return HttpResponse("You did not submit to analysis")
     else:
         session = [request.session['text'], request.session['analysed_text']]
+        #request.session.flush()
         return HttpResponse("You submitted:<br>" + session[0] + "<br>" + "Your results:<br>" + session[1])
