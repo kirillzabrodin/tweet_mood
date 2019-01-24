@@ -4,3 +4,5 @@ htmlcov/*
 .pytest_cache
 geckodriver.log
 *.DS_Store
+staticfiles
+db.sqlite3

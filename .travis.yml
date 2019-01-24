@@ -19,6 +19,16 @@ before_install:
 - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
 - export PATH=$PATH:$PWD/geckodriver
 script:
+- rm -rf ./staticfiles
+- python manage.py collectstatic --noinput
 - pytest
 after_success:
 - codecov
+deploy:
+  provider: heroku
+  api_key:
+    secure: s+3o6xWbLUi93xxbmY2RhArYpgsoyVjHAFi4BNt/NnBUoPRJAOonSFf9xjRSJ0Jj702EcihS6k9U/9Q1d/YKvnziUMLtJXrs0YFKJocHOsfNy1l632NVgNQ9G41mqRCbhS/zIQjeZ04KMTsICV8+YMjgJUxt1cTJqOotxQePhfUegB52S86DTt/mDUhLuO2CpcSu1Y9qUvcIc5RwXX2f5VUfU57zCC5DLBlqY+XL6IAnJz/4TRYMSbpCRsUZdDFn6fnkLL5Dw+OCepirQJZSkYCl76AKxtGRiBCXKwrpcsXr14w6Tb4oOxJU2vMXuNePgfz4EAasMhd9Y/aPxA3fNwmeU57idUc9YpnQ1e+CnIMKeuogXDBqVE1X0m3jjI5dcZ+IPlj0SNkI0mXrzc9pK+kGVJnvrUqAEl8moZpr+dnFMrwSsQTGVBWWTArSmPg/Bhh4SEsU5BNr/odgR7CVcYV5jIB8xjxnvCAmYbJkj7apjrkbznY0WCB58nIFzzQDcza81+/YKqIbqT0iy4hZyvKn0s72kSsfP9UWFWzi7o5xuLixo5bqvw15unnbuA2u7PVEESqsU1BFxu4eLXboUoFD/0BU+spv4gkR2VcMcYM9rkaGl5W7T9F1G9hPLEiLSwPcTFUsKt3PFpezXn5+Yc0HkYe5jsQpa+1DGK8VHQU=
+  app: tweet-mood
+  on:
+    repo: kirillzabrodin/tweet_mood
+    branch: master
