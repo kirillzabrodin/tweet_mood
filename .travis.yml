@@ -5,33 +5,27 @@ matrix:
     dist: xenial
     sudo: true
 env:
-  - MOZ_HEADLESS=1
-  - GECKODRIVER_VERSION=0.23.0
-
-addons:
-  firefox: latest
-
-before_install:
-  - pip install -r requirements.txt
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
-  - mkdir geckodriver
-  - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
-env:
   matrix:
   - DJANGO=2.1.5
   global:
   - DJANGO_SETTINGS_MODULE='mysite.settings'
   - CODECOV_TOKEN="a8e814d9-19c3-48f3-98ea-0ef43961a892"
+addons:
+  firefox: latest
+before_install:
+- pip install -r requirements.txt
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
 script:
 - pytest
 after_success:
-  - codecov
-
+- codecov
 deploy:
   provider: heroku
   api_key:
-    secure: dRlcPKPXBBvgT3NIAPJjZ2d9uwN4cSuX1VI+LQw9JCZDydUwxzWXNd7rRxusfM5sCg4y+WqZ9pIW27egIP0eGYua+9r9ON2hMdUbXxu8QRDmUP9rZW8vrcmluti+Kf7xMPwgi0LRbLap644tB3nkt6lwQm81ek+GUvsTYGPFkrOzdKA/nVXV/QFSPtghiO50O4iag2Pq2Sj0oc1RglmrfAIAo3cp+ZnF1fJBTR+Ynw/51F1xqUvbWfW/S9bh+5o07igFEEVKhAkHrBsFgFdGRL0xRnaCy7Tatjp8qujW1ZiPAf6ZaJoKGq9OLbmKiwgFNAczZqsKZolcKrzyxEo6LjSZSCNWoICo/F05kifQr5zDEGZ7vy1pmaEOR1HSIHI/C1gEiZEqG5ZMmTux+7X+rPkzDSKlYLR4IxbXYofnPEcvUiVW1QI4tEqlWwnb+02WoR8xzxoNWoJ3K/BbXMohSGCNxWvhA/UjBbDoEWwKIz+tppCtulGZaPC0qsFX7fMCL7MV0+Tx9LhmjL+thl4CbSc8Wf96RV655G/7baFR7x80peXNEU108iyiN4Iz5d5cXXMDEnH+Xv3iu+1jLtBCPoBv4g6UE6VDcerQvczA4mk27jpQBnjwyxyfDLvvW6hfqtEr3Q8KD4va6JGZdvP3FvGVQVVKKgxBZZYihQsRPHM=
+    secure: VkD9073Jt7wMvy8ixtCrg2o+ozeij0dFj3zTDxqtENF1lMA+oucCiMYO7pribrCKyEPWwCTotW0WCljB5d7pqS0MnEVVFfa4INvM9gxCxNny9y+/FgQGVKBO3YxFItVW5ftyNCYfenaqkfWdqA/iZMsKbX2h5B2ISYg/rfVuX5aEEP9jDn1NhNs241YvoOEwCTYPJrUXr8hHKFsqjQ/8jwFF6NUPQg48oPkQFdpx8V8n3qtBtO9n0+bE6JUdtye7RPGe0fVl0T6oL1DJ0ZY/r3ipABDsXZgi5pB8GcYUr1LE9nlNZz04PFucfc7SuNiFUlq6Qybw6ATYKGwfQfF9LlRf7TWkKE/qLVirnFiOug0uZgNbqF+yGOtlDgcvmCOCYdzMp7106K83O+ftyYChHoBAn7BxvbsNxCvSFvV7zj1lnESuUBLrovr63a50GGhRLrFwHVWdosravct8RDo4ZgZvAvNvgeaJqt2HxjArx9ibRJxjQNgUsKtRf+l/mptDXo5QDRA+yvxoDfObKjs8aKIoXvbXyXRQK5NOh4WWoK7nvonMgEkS7GoUOBApYNM9gz1Cp2By5VAOwIr+aAr4rOvNX5gSgLt0h48yhR9rwmA6GEcAeM2WyW8EmTjuX0e9fIPgbCZR3K2wNSYshCqdLnpdPsDFg5PzRhIHZKRbJSc=
   app:
     master: tweet-mood
     heroku: tweet-mood
