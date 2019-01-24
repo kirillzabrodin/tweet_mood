@@ -19,6 +19,8 @@ before_install:
 - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
 - export PATH=$PATH:$PWD/geckodriver
 script:
+- rm -rf ./staticfiles
+- python manage.py collectstatic --noinput
 - pytest
 after_success:
 - codecov
