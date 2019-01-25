@@ -3,10 +3,10 @@
 {% block content %}
         <!-- how is feeling right now form -->
         <div class="container" id="london-input-form">
-          <div id="results" class="row col-md-6 offset-md-3 text-center">
-            <h1>You felt {{ text }}</h1>
-            <ul>{% for tone in session.document_tone.tones %}
-              <li>{{tone.tone_name}} : {{tone.score}}</li>
+          <div id="results" class="row col-md-8 offset-md-2 text-center">
+            <h1>{{ text }}</h1>
+            <ul>{% for tone, score in response_dict.items %}
+              <li>{{tone}} {{score}}</li>
             </ul>{% endfor %}
         </div>
     </div>
