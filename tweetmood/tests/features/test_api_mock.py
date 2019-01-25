@@ -21,7 +21,7 @@ class APITest(LiveServerTestCase):
 
     @patch('tweetmood.watson.Watson.send_for_analysis')
     def test_submit_text_with_mock_api(self, mock_analysis):
-        mock_analysis.return_value = {}
+        mock_analysis.return_value = {'document_tone': {'tones': []}}
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
