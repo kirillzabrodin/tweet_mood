@@ -7,7 +7,10 @@
             <form class="form-inline" action="/analysis" method="post">
               {% csrf_token %}
               <h1>How does London feel about <input class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
-              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">click to find out</button>
+              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">click to find out
+              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+              Loading..
+              </button>
             </form>
           </div>
         </div>
