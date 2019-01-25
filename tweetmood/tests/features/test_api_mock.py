@@ -3,17 +3,17 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 
-class HelloWorldTest(LiveServerTestCase):
+class APITest(LiveServerTestCase):
 
     def setUp(self):
         options = Options()
         options.add_argument('-headless')
         self.selenium = webdriver.Firefox(options=options)
-        super(HelloWorldTest, self).setUp()
+        super(APITest, self).setUp()
 
     def tearDown(self):
         self.selenium.quit()
-        super(HelloWorldTest, self).tearDown()
+        super(APITest, self).tearDown()
 
     def test_submit_button_is_show(self):
         selenium = self.selenium
