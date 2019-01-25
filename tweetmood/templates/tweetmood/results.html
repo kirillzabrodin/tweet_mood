@@ -6,7 +6,7 @@
           <div id="results" class="row col-md-8 offset-md-2 text-center">
             <h1>{{ text }}</h1>
             <ul>{% for tone, score in response_dict.items %}
-              <li>{{tone}} : {{score}}</li>
+              <li>{{tone}} {{score}}</li>
             </ul>{% endfor %}
         </div>
     </div>
