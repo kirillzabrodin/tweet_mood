@@ -50,7 +50,7 @@ Run ```pytest```
 
 To see a test coverage table run ```open htmlcov/index.html```
 
-The app uses third-party APIs. Where required the tests mock calls to these APIs.
+The app uses two third-party APIs. Where required the tests mock calls to these APIs.
 
 ## Deployment
 
