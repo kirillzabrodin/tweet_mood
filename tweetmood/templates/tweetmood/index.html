@@ -1,5 +1,4 @@
 {% extends "tweetmood/header.html" %}
-
 {% block content %}
         <!-- how is feeling right now form -->
         <div class="container" id="london-input-form">
@@ -7,11 +6,9 @@
             <form class="form-inline" action="/analysis" method="post">
               {% csrf_token %}
               <h1>How does London feel about <input class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
-              <button name="analyse" type="submit" class="btn btn-custom btn-block mb-2">click to find out
-              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-              Loading..
-              </button>
+              <button name="analyse" type="submit" id="button_loader" class="btn btn-custom btn-block mb-2">click to find out</button>
             </form>
+
           </div>
         </div>
       <!-- divs below here are from header file -->
