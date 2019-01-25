@@ -1,6 +1,10 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from tweetmood.watson import Watson
+import unittest
+from unittest import mock
+from unittest.mock import patch
 
 
 class APITest(LiveServerTestCase):
@@ -15,7 +19,9 @@ class APITest(LiveServerTestCase):
         self.selenium.quit()
         super(APITest, self).tearDown()
 
-    def test_submit_button_is_show(self):
+    @patch('tweetmood.watson.Watson.send_for_analysis')
+    def test_submit_text_with_mock_api(self, mock_analysis):
+        mock_analysis.return_value = {}
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
