@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .watson import Watson
+from .tweeterpy import Tweeterpy
+import time
 
 def index(request):
     return render(request, 'tweetmood/index.html')
@@ -10,7 +12,9 @@ def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
         watson = Watson()
-        analysed_text = watson.send_for_analysis(text)
+        tweets = Tweeterpy()
+        text_for_analysis = tweets.get_tweets(text)
+        analysed_text = watson.send_for_analysis(text_for_analysis)
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
