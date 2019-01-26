@@ -3,7 +3,7 @@ from textblob import TextBlob
 
 class Holmes:
 
-    def __init__(self, textblob = TextBlob()):
+    def __init__(self, textblob=TextBlob()):
         self.textblob = textblob
 
     def holmes_analysis(self, text):
