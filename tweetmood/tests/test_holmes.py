@@ -6,6 +6,7 @@ from ..holmes import Holmes
 
 
 class HolmesUnitTests(TestCase):
+
     def test_very_positive(self):
         mock_textblob = Mock()
         mock_textblob.sentiment.polarity = 0.75
