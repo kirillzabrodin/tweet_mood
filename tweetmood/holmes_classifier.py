@@ -1,7 +1,7 @@
-from textblob import TextBlob
-from textblob.classifiers import NaiveBayesClassifier
-from nltk.corpus import movie_reviews
-import random
+# from textblob import TextBlob
+# from textblob.classifiers import NaiveBayesClassifier
+# from nltk.corpus import movie_reviews
+# import random
 
 
 # The following formats the movie_reviews dataset into a list:
