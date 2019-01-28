@@ -10,7 +10,7 @@ class HolmesUnitTests(TestCase):
     def test_very_positive(self):
         mock_textblob = Mock()
         mock_textblob.sentiment.polarity = Mock(return_value=0.75)
-        holmes = Holmes(mock_textblob)
+        holmes = Holmes()
         assert holmes.holmes_analysis('love') == 'very positive'
 
     def test_positive(self):
