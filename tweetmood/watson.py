@@ -31,7 +31,7 @@ class Watson:
             { 'text': text },
             'application/json',
         )
-        return response.get_result()
+        return json.dumps(response.get_result(), indent=2)
 
     def send_for_full_analysis(self, tweets, word):
         response = self.text_analyzer.analyze(
@@ -45,6 +45,4 @@ class Watson:
                 )
             )
         )
-        print(tweets)
-        print(response)
         return response.get_result()

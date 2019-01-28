@@ -13,6 +13,7 @@ def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
         watson = Watson()
+        tweets = Tweeterpy()
         response_formatter = ResponseFormatter()
         text_for_analysis = tweets.get_tweets(text)
         analysed_text = watson.send_for_full_analysis(text_for_analysis, text)
