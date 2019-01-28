@@ -33,11 +33,15 @@ $(document).ready(function() {
   function displayResults(data) {
     var url = "http://localhost:8000/result"
     $.get(url, function(data) {
-      $('#results').show()
-      displayResultsContainer()
-      displayUsersInputText(data.text)
-      displayProgressBars(data.response_dict)
+      renderResults(data)
     })
+  }
+
+  function renderResults(data) {
+    $('#results').show()
+    displayResultsContainer()
+    displayUsersInputText(data.text)
+    displayProgressBars(data.response_dict)
   }
 
   function displayResultsContainer() {
