@@ -36,7 +36,7 @@ class Tweeterpy:
         return Tweeterpy.strip_all_entities(Tweeterpy.strip_links(text)).replace('RT', '')
 
     def get_tweets(self, text):
-        result = tweepy.Cursor(self.api.search, q=text, geocode="51.5074,0.1278,20km", lang='en',rpp='10',result_type='recent').items(10)
+        result = tweepy.Cursor(self.api.search, q=text, geocode="51.5074,0.1278,20km", lang='en',rpp='100',result_type='recent').items(100)
         raw_output = ''
         for tweet in result:
             raw_output += " " + tweet.text

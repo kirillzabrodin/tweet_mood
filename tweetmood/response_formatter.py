@@ -10,7 +10,6 @@ class ResponseFormatter:
          }
 
     def process(self, response):
-        print(response)
         for tone in response['emotion']['targets']:
             for key in tone['emotion']:
                 self.formatted_response_dict[key] = round(tone['emotion'][key] * 100)

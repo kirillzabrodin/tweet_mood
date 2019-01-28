@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from .watson import Watson
 from .tweeterpy import Tweeterpy
@@ -8,7 +9,6 @@ from .response_formatter import ResponseFormatter
 def index(request):
     return render(request, 'tweetmood/index.html')
 
-
 def analysis(request):
     if request.method == 'POST':
         text = request.POST['text']
@@ -16,7 +16,7 @@ def analysis(request):
         tweets = Tweeterpy()
         response_formatter = ResponseFormatter()
         text_for_analysis = tweets.get_tweets(text)
-        analysed_text = watson.send_for_full_analysis(text_for_analysis, text)
+        analysed_text = watson.send_for_analysis(text_for_analysis, text)
         response_formatter.process(analysed_text)
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text

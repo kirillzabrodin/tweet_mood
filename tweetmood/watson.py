@@ -16,16 +16,16 @@ class Watson:
     )):
         self.text_analyzer = text_analyzer
 
-    def send_for_full_analysis(self, tweets, word):
-        response = self.text_analyzer.analyze(
+    def send_for_analysis(self, tweets, word):
+        return self.text_analyzer.analyze(
             text=tweets,
             features=Features(
-                entities=EntitiesOptions(),
-                keywords=KeywordsOptions(),
+                keywords=KeywordsOptions(
+                    emotion=True,limit=2
+                ),
                 emotion=EmotionOptions(
                     targets=[word],
-                    document=False
+                    document=True
                 )
             )
-        )
-        return response.get_result()
+        ).get_result()
