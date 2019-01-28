@@ -3,7 +3,7 @@ import unittest
 from unittest import mock
 from unittest.mock import patch, Mock
 from ..holmes_classifier import HolmesClassifier
-
+import nltk
 
 class HolmesClassifierUnitTests(TestCase):
 
