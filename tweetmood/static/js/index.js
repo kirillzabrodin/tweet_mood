@@ -2,6 +2,10 @@ $(document).ready(function() {
 
   $('#results').hide()
 
+  $('#button_loader').click(function() {
+    $('#button-spinner').addClass("spinner-border spinner-border-sm")
+  })
+
   $('#text-form').submit(function(e) {
     var form = $(this)
     $.ajax({
@@ -20,13 +24,18 @@ $(document).ready(function() {
     var url = "http://localhost:8000/result"
     $.get(url, function(data) {
       $('#results').show()
+      displayResultsContainer()
       displayUsersInputText(data.text)
       displayProgressBars(data.response_dict)
     })
   }
 
+  function displayResultsContainer() {
+    $('#results').html(renderResultsContainer())
+  }
+
   function displayUsersInputText(text) {
-    $("#users-text").html(text)
+    $("#results").prepend(renderUserInputText(text))
   }
 
   function hideInputForm() {
@@ -39,6 +48,14 @@ $(document).ready(function() {
       var toneScore = data[tone]
       $('#progress-results').append(`<h1>${toneName} - ${toneScore}%</h1><div id='progress-results' class='progress'><div id='${toneName}' class='progress-bar progress-bar-${toneName}' role='progressbar' style='width: ${toneScore}%' aria-valuenow='${toneScore}' aria-valuemin='0' aria-valuemax='100'></div>'</div>`)
     }
+  }
+
+  function renderUserInputText(text) {
+    return `<h1 id="users-text">${text}</h1>`
+  }
+
+  function renderResultsContainer() {
+    return '<div id="progress-results"></div>'
   }
 
 })

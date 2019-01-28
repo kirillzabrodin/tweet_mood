@@ -1,0 +1,27 @@
+.progress-bar-Joy {
+  background-color: pink !important;
+}
+
+.progress-bar-Anger {
+  background-color: red !important;
+}
+
+.progress-bar-Sadness {
+  background-color: purple !important;
+}
+
+.progress-bar-Fear {
+  background-color: yellow !important;
+}
+
+.progress-bar-Disgust {
+  background-color: green !important;
+}
+
+#results {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+  padding: 10px;
+}
