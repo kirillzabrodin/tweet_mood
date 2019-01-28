@@ -33,12 +33,12 @@ class Tweeterpy:
         return ' '.join(words)
 
     def format_output(text):
-        return Tweeterpy.strip_all_entities(Tweeterpy.strip_links(text))
+        return Tweeterpy.strip_all_entities(Tweeterpy.strip_links(text)).replace('RT', '')
 
     def get_tweets(self, text):
         result = tweepy.Cursor(self.api.search, q=text, geocode="51.5074,0.1278,20km", lang='en',rpp='10',result_type='recent').items(10)
         raw_output = ''
         for tweet in result:
             raw_output += " " + tweet.text
-        output = Tweeterpy.format_output(raw_output).replace('RT', '')
+        output = Tweeterpy.format_output(raw_output)
         return output

@@ -14,7 +14,7 @@ def analysis(request):
         watson = Watson()
         tweets = Tweeterpy()
         text_for_analysis = tweets.get_tweets(text)
-        analysed_text = watson.send_for_analysis(text_for_analysis)
+        analysed_text = watson.send_for_full_analysis(text_for_analysis, text)
         request.session['text'] = text
         request.session['analysed_text'] = analysed_text
         return HttpResponseRedirect("result")
