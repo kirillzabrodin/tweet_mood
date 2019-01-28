@@ -22,21 +22,24 @@ I would like to be able to choose the content that is analysed
 ```
 
 ## Getting started
-Set up a project directory and clone the repo with ```git clone``` and the appropriate url.
+Set up a project directory and clone the repo with `git clone this_project_url`.
 
 You will need some API keys, both locally and in your Travis CI settings:
-* A Django SECRET_KEY (found in settings.py) - this is automatically generated on a new Django set-up, and can be a random string.  Keep yours hidden(for example, in this project settings.py points to a local environmental variable)
-* An API for Watson (found in tweetmood/watson.py) - see [] for more information on Watson
+* A 'TWEETMOOD_SECRET_KEY' (used in settings.py) - this is automatically generated on a new Django set-up, and can be a random string. This is used for administration so keeping this secret is important.
+
+* An API key for Watson (used in tweetmood/watson.py) saved as 'WATSON_TONE_ANALYZER'. This can be gotten from [the bluemix website](https://console.bluemix.net/).
 
 Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
 
-Run ```pip install -r requirements.txt```
+Run `pip install -r requirements.txt`
 
-Run ```python ./manage.py runserver```
+Run `python ./manage.py runserver`
 
-This defaults to port 8000, so open ```localhost:8000``` in your browser.
+This defaults to port 8000, so open `localhost:8000` in your browser.
 
 ## Usage
+
+At the moment whatever you type in will be analysed and the prominent mood displayed. Further progress will be shared shortly.
 
 ## Testing
 
@@ -46,14 +49,24 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run ```pytest```
+Run `pytest`
 
-To see a test coverage table run ```open htmlcov/index.html```
+To see a test coverage table run `open htmlcov/index.html`
 
-The app uses two third-party APIs. Where required the tests mock calls to these APIs.
+The app uses a third-party API. Where required the tests mock calls to the API.
 
 ## Deployment
 
+The application is deployed on [Heroku](https://tweet-mood.herokuapp.com/). The first load might take a while, but it will boot up eventually. This can be used without any API keys necessary.
+
 ## Our Approach
 
+Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach.
+
 ## Contributing
+
+Feel free to pull request any features you would like to add, however 100% code coverage is required as well as approvals from two of the founding members for it to be added.
+
+## Issues
+
+Open up an issue [here](https://github.com/kirillzabrodin/tweet_mood/issues) and we will try to get back to you as soon as possible.
