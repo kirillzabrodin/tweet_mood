@@ -17,7 +17,7 @@ def analysis(request):
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text
         request.session['response_dict'] = response_dict
-        return JsonResponse(request)
+        return redirect('/result')
     else:
         return HttpResponse("You did not submit to analysis")
 
@@ -28,4 +28,4 @@ def result(request):
     else:
         response_dict = request.session['response_dict']
         text = request.session["text"]
-        return render(request, 'tweetmood/results.html', {'response_dict' : response_dict, "text" : text})
+        return JsonResponse({'response_dict' : response_dict, "text" : text})
