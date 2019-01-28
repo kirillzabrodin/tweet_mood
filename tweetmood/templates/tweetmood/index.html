@@ -1,16 +1,7 @@
 {% extends "tweetmood/header.html" %}
 {% block content %}
   <!-- input form -->
-  <div class="container" id="london-input-form">
-    <div class="row col-md-6 offset-md-3 text-center">
-      <form id="text-form" class="form-inline" action="/analysis" method="post">{% csrf_token %}
-        <h1>How does London feel about <input class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
-        <button id="button_loader" name="analyse" class="btn btn-custom btn-block mb-2" type="submit"><span id="button-text">click to find out</span>
-        <span id="button-spinner" class="" role="status" aria-hidden="false"></span>
-      </button>
-      </form>
-    </div>
-  </div>
+  <div class="container" id="london-input-form"></div>
   <!-- results -->
   <div id="results" class="container text-center"></div>
 <!-- div below from header -->
