@@ -21,6 +21,7 @@ before_install:
 script:
 - rm -rf ./staticfiles
 - python manage.py collectstatic --noinput
+- python -m textblob.download_corpora
 - pytest
 after_success:
 - codecov
