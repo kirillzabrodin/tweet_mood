@@ -4,6 +4,7 @@ from unittest import mock
 from unittest.mock import patch, Mock
 from ..holmes_classifier import HolmesClassifier
 import nltk
+nltk.download('punkt')
 
 class HolmesClassifierUnitTests(TestCase):
 
