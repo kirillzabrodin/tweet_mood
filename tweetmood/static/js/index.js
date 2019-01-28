@@ -2,11 +2,8 @@ $(document).ready(function() {
 
   $('#results').hide()
 
-  $('#button_loader').click(function() {
-    $('#button-spinner').addClass("spinner-border spinner-border-sm")
-  })
-
   $('#text-form').submit(function(e) {
+    displayLoadingButton()
     var form = $(this)
     $.ajax({
       type: form.attr('method'),
@@ -19,6 +16,19 @@ $(document).ready(function() {
     })
     e.preventDefault()
   })
+
+  function displayLoadingButton() {
+    showSpinner()
+    showLoading()
+  }
+
+  function showSpinner() {
+    $('#button-spinner').addClass("spinner-border spinner-border-sm")
+  }
+
+  function showLoading() {
+    $('#button-text').text('loading...')
+  }
 
   function displayResults(data) {
     var url = "http://localhost:8000/result"
