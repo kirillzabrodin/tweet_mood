@@ -3,8 +3,7 @@
         <!-- how is feeling right now form -->
         <div class="container" id="london-input-form">
           <div class="row col-md-6 offset-md-3 text-center">
-            <form class="form-inline" action="/analysis" method="post">
-              {% csrf_token %}
+            <form id="text-form" class="form-inline" action="/analysis" method="post">{% csrf_token %}
               <h1>How does London feel about <input class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
               <button name="analyse" type="submit" id="button_loader" class="btn btn-custom btn-block mb-2">click to find out</button>
             </form>

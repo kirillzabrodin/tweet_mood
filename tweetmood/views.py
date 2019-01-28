@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .watson import Watson
 from .response_formatter import ResponseFormatter
 
@@ -17,7 +17,7 @@ def analysis(request):
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text
         request.session['response_dict'] = response_dict
-        return HttpResponseRedirect("result")
+        return JsonResponse(request)
     else:
         return HttpResponse("You did not submit to analysis")
 
