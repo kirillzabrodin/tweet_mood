@@ -17,6 +17,18 @@ class Watson:
         self.text_analyzer = text_analyzer
 
     def send_for_analysis(self, tweets, word):
+        # print(self.text_analyzer.analyze(
+        #     text=tweets,
+        #     features=Features(
+        #         keywords=KeywordsOptions(
+        #             emotion=True,limit=2
+        #         ),
+        #         emotion=EmotionOptions(
+        #             targets=[word],
+        #             document=True
+        #         )
+        #     )
+        # ).get_result())
         return self.text_analyzer.analyze(
             text=tweets,
             features=Features(
