@@ -15,18 +15,16 @@
 
     renderProgressDiv: function() {
       return '<div id="progress-results"></div>'
+    },
+
+    renderUsersInputText: function(text) {
+      return `<h1 id="users-text">${text}</h1>`
     }
   }
 
   exports.ResultsView = ResultsView
 })(this)
 
-
-//
-//   renderProgressResultsDiv() {
-//     return '<div id="progress-results"></div>'
-//   }
-//
 //   renderUsersInputText(text) {
 //     return `<h1 id="users-text">${text}</h1>`
 //   }

@@ -23,4 +23,12 @@ describe("ResultsView", function() {
     })
   })
 
+  describe("renderUsersInputText", function() {
+    it("adds user text to html", function() {
+      var result = resultsView.renderUsersInputText('Brexit')
+      var expectedResult = '<h1 id="users-text">Brexit</h1>'
+      expect(result).toEqual(expectedResult)
+    })
+  })
+
 })
