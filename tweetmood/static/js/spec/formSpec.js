@@ -4,7 +4,7 @@ describe("Form", function() {
   var button
 
   beforeEach(function() {
-    button = jasmine.createSpyObj('button',['render']);
+    button = jasmine.createSpyObj('button',['render'])
     form = new Form(button)
   })
 

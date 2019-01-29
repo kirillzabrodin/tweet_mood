@@ -1,14 +1,14 @@
-import Form from './components/form.js'
+(function(exports) {
 
-export class HomepageView {
-  constructor(form = new Form) {
+  function HomepageView(form = new Form) {
     this.form = form
   }
 
-  render() {
-    return this.form.render()
+  HomepageView.prototype = {
+    render: function() {
+      return this.form.render()
+    }
   }
 
-}
-
-export default HomepageView
+  exports.HomepageView = HomepageView
+})(this)
