@@ -18,12 +18,13 @@ before_install:
 - mkdir geckodriver
 - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
 - export PATH=$PATH:$PWD/geckodriver
-script:
+install:
+- npm install
 - rm -rf ./staticfiles
 - python manage.py collectstatic --noinput
+- python manage.py runserver &
+script:
 - pytest
-- npm install
-- python manage.py runserver
 - npm test
 after_success:
 - codecov
