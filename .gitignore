@@ -8,3 +8,4 @@ staticfiles
 db.sqlite3
 package-lock.json
 node_modules/*
+cypress/videos/*
