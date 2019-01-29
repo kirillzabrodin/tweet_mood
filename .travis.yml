@@ -22,6 +22,9 @@ script:
 - rm -rf ./staticfiles
 - python manage.py collectstatic --noinput
 - pytest
+- npm install
+- python manage.py runserver
+- npm test
 after_success:
 - codecov
 deploy:

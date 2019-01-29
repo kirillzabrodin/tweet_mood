@@ -32,8 +32,7 @@ it("allows you to type input and submit", function() {
   cy.get("form")
   cy.get('Input[name="text"]')
   .type('I am very happy about cypress testing')
-  cy.get('button')
-  .click({ force: true })
+  cy.get('[data-cy="submit_button"]').click()
 })
 it("contains the input as the title", function() {
   cy.get("h1")

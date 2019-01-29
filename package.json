@@ -1,0 +1,24 @@
+{
+  "name": "tweet_mood",
+  "version": "1.0.0",
+  "description": "A tweet mood analyzer",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^3.1.4",
+    "start-server-and-test": "^1.7.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirillzabrodin/tweet_mood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirillzabrodin/tweet_mood/issues"
+  },
+  "homepage": "https://github.com/kirillzabrodin/tweet_mood#readme"
+}
