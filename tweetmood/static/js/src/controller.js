@@ -15,8 +15,14 @@
       var self = this
       $('#london-form').submit(function(e) {
         e.preventDefault()
-        
+        console.log('fuck off jasmine')
+        self.displayLoadingButton()
+        // self.postFormData($('#london-form'))
       })
+    },
+
+    displayLoadingButton: function() {
+
     },
 
     _hideresults: function() {

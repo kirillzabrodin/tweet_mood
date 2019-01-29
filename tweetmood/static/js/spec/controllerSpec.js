@@ -1,11 +1,10 @@
 describe("Controller", function() {
 
   var controller
-  var resultsView
   var homepageView
 
   beforeEach(function() {
-    homepageView = jasmine.createSpyObj('homepageView',['render'])
+    homepageView = jasmine.createSpyObj('homepageView', ['render'])
     controller = new Controller(homepageView)
   })
 
@@ -17,7 +16,7 @@ describe("Controller", function() {
     })
 
     it("renders the homepage view", function() {
-      spyOn($.fn, "html").and.returnValue("")
+      spyOn($.fn, "html")
       controller.displayHomepage()
       expect($.fn.html).toHaveBeenCalledWith(homepageView.render())
     })

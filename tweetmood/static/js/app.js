@@ -1,8 +1,6 @@
-import Controller from './src/controller.js';
-
 $(document).ready(function() {
 
-  let controller = new Controller()
+  var controller = new Controller()
   controller.displayHomepage()
 
 })
