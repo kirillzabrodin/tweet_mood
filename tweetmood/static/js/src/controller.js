@@ -15,44 +15,39 @@ export class Controller {
   }
 
   listenForLondonFormSubmit() {
-    let self = this
-    $('#london-form').submit(function(e) {
+    $('#london-form').submit((e) => {
       e.preventDefault()
-      self.displayLoadingButton()
-      let form = $(this)
-        self.postFormData(form)
+      this.displayLoadingButton()
+      this.postFormData($('#london-form'))
     })
   }
 
   postFormData(form) {
-    let self = this
     $.ajax({
       type: form.attr('method'),
       url: form.attr('action'),
       data: form.serialize(),
-      success: function(data) {
-        self.hideInputForm()
-        self.getResults(data)
+      success: (data) => {
+        this.hideInputForm()
+        this.getResults(data)
       }
     })
   }
 
   getResults(data) {
-    let self = this
     let url = "http://localhost:8000/result"
-    $.get(url, function(data) {
-      self.displayResults(data)
+    $.get(url, (data) => {
+      this.displayResults(data)
     })
   }
 
   displayResults(data) {
-    let self = this
     let text = data.text
     let response_dict = data.response_dict
     $('#results').show()
-    $('#results').append(self.resultsView.renderUsersInputText(text))
-    $('#results').append(self.resultsView.renderProgressResultsDiv())
-    $('#progress-results').append(self.resultsView.renderProgressBars(response_dict))
+    $('#results').append(this.resultsView.renderUsersInputText(text))
+    $('#results').append(this.resultsView.renderProgressResultsDiv())
+    $('#progress-results').append(this.resultsView.renderProgressBars(response_dict))
   }
 
   hideresults() {
@@ -64,12 +59,10 @@ export class Controller {
   }
 
   displayButton() {
-    let self = this
-    $('#london-form').append(self.homepageView.button.renderButton())
+    $('#london-form').append(this.homepageView.button.renderButton())
   }
 
   displayLoadingButton() {
-    console.log('want to display loading button')
     $('#button-spinner').addClass(this.homepageView.form.button.renderSpinnerClass())
     $('#button-text').text(this.homepageView.form.button.renderLoadingText())
   }
