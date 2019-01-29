@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .watson import Watson
 from .response_formatter import ResponseFormatter
 
+
 def index(request):
     return render(request, 'tweetmood/index.html')
 
