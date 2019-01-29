@@ -17,16 +17,15 @@ class APITest(LiveServerTestCase):
 
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
-    def test_submit_text_with_mock_api(self, mock_analysis, mock_tweets):
-        mock_tweets.return_value = 'Test'
-        mock_analysis.return_value = {'usage': {'text_units': 1, 'text_characters': 4177, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'great events', 'relevance': 0.809691, 'emotion': {'sadness': 0.000692, 'joy': 0.4031, 'fear': 2.6e-05, 'disgust': 0.297596, 'anger': 0.421568}, 'count': 1}, {'text': 'theme amp', 'relevance': 0.740042, 'emotion': {'sadness': 0.000692, 'joy': 0.4031, 'fear': 2.6e-05, 'disgust': 0.297596, 'anger': 0.421568}, 'count': 4}], 'emotion': {'targets': [{'text': 'themes', 'emotion': {'sadness': 0.000704, 'joy': 0.404111, 'fear': 2.7e-05, 'disgust': 0.296487, 'anger': 0.421414}}], 'document': {'emotion': {'sadness': 0.000692, 'joy': 0.4031, 'fear': 2.6e-05, 'disgust': 0.297596, 'anger': 0.421568}}}}
+    def test_submit_text_with_mock_api(self, mock_tweets, mock_analysis):
+        mock_tweets.return_value = "Brexit tweets"
+        mock_analysis.return_value = {'usage': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
         body_text = selenium.find_element_by_tag_name('body').text
-        print(body_text)
         assert 'Test' in body_text
 
     def tearDown(self):
