@@ -21,6 +21,12 @@ describe("Controller", function() {
       controller.displayHomepage()
       expect($.fn.html).toHaveBeenCalledWith(homepageView.render())
     })
+
+    it("listens for form submit", function() {
+      spyOn(controller, "_listenForLondonFormSubmit")
+      controller.displayHomepage()
+      expect(controller._listenForLondonFormSubmit).toHaveBeenCalled()
+    })
   })
 
 })
