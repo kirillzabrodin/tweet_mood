@@ -32,3 +32,15 @@ deploy:
   on:
     repo: kirillzabrodin/tweet_mood
     branch: master
+
+language: node_js
+node_js:
+  - 10
+cache:
+  npm: true
+  directories:
+    - ~/.cache
+install:
+  - npm ci
+script:
+  - $(npm bin)/cypress run --record
