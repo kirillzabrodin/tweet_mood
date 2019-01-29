@@ -13,20 +13,28 @@ An application for analysing the emotions in text
 ## User Stories
 ```
 As a User,
-so I can pick up the moods of peoples words,
-I would like to receive the emotions in someones words
+so I can pick up the moods of London,
+I would like to pick a twitter topic for London
 
 As a User,
 so I can pick what I content is being examined,
 I would like to be able to choose the content that is analysed
+
+As a User,
+so I can see what people feel about my topic,
+I would like to be able to see the analysis
 ```
 
 ## Getting started
 Set up a project directory and clone the repo with ```git clone``` and the appropriate url.
 
-You will need some API keys, both locally and in your Travis CI settings:
-* A Django SECRET_KEY (found in settings.py) - this is automatically generated on a new Django set-up, and can be a random string.  Keep yours hidden(for example, in this project settings.py points to a local environmental variable)
-* An API for Watson (found in tweetmood/watson.py) - see [] for more information on Watson
+You will need some API keys, locally, in your Travis CI and/or Heroku settings:
+
+* A [Django SECRET_KEY](https://github.com/kirillzabrodin/tweet_mood/blob/master/mysite/settings.py) - this is automatically generated on a new Django set-up, and can be a random string.  Keep yours hidden as it gived admin rights for the project.
+
+* An API key for [Watson](https://github.com/kirillzabrodin/tweet_mood/blob/master/tweetmood/watson.py) - see [] for more information on Watson
+
+* You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will
 
 Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
 
