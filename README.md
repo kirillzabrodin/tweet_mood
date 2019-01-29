@@ -31,9 +31,9 @@ You will need some API keys, both locally and in your Travis CI settings:
 
 Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
 
-Run `pip install -r requirements.txt`
+Run `pip install -r requirements.txt`.
 
-Run `python ./manage.py runserver`
+Run `python ./manage.py runserver`. You can run the migrations as suggested if Django suggests it.
 
 This defaults to port 8000, so open `localhost:8000` in your browser.
 
@@ -49,7 +49,7 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run `pytest`
+Run `pytest`. Usually running `python manage.py collectstatic --noinput` is required to pass the tests.
 
 To see a test coverage table run `open htmlcov/index.html`
 
