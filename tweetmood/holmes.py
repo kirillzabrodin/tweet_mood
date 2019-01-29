@@ -5,7 +5,7 @@ with open('tweetmood/holmes_data/reformatted_small_train.csv', 'r') as train:
     trained_classifier = NaiveBayesClassifier(train)
 
 
-class HolmesClassifier:
+class Holmes:
 
     def __init__(self, classifier=trained_classifier):
         self.classifier = classifier
