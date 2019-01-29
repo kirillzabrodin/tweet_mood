@@ -8,8 +8,7 @@ describe("Button", function() {
 
   describe("renderSpinnerClass", function() {
     it("returns the spinnner class information", function() {
-      result = button.renderSpinnerClass()
-      exepct(result).toEq("spinner-border spinner-border-sm")
+      expect(button.renderSpinnerClass()).toEqual("spinner-border spinner-border-sm")
     })
   })
 
