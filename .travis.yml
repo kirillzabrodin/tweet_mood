@@ -20,8 +20,8 @@ before_install:
 - export PATH=$PATH:$PWD/geckodriver
 script:
 - rm -rf ./staticfiles
-- python manage.py collectstatic --noinput
 - python -m textblob.download_corpora
+- python manage.py collectstatic --noinput
 - pytest
 after_success:
 - codecov
