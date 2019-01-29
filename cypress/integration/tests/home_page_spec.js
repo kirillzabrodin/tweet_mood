@@ -55,7 +55,7 @@ it("contains Analytical title", function() {
   cy.get("h2")
   cy.should('contain', "Analytical")
 })
-it("contains fear title", function() {
+it("contains Fear title", function() {
   cy.get("h2")
   cy.should('contain', "Fear")
 })
