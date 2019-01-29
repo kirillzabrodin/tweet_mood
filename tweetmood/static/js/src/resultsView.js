@@ -24,14 +24,3 @@
 
   exports.ResultsView = ResultsView
 })(this)
-
-//   renderUsersInputText(text) {
-//     return `<h1 id="users-text">${text}</h1>`
-//   }
-//
-//   renderProgressBarDiv() {
-//     return '<div id="progress-results"></div>'
-//   }
-// }
-//
-// export default ResultsView
