@@ -13,27 +13,34 @@ An application for analysing the emotions in text
 ## User Stories
 ```
 As a User,
-so I can pick up the moods of peoples words,
-I would like to receive the emotions in someones words
+so I can pick up the moods of London,
+I would like to pick a twitter topic for London
 
 As a User,
 so I can pick what I content is being examined,
 I would like to be able to choose the content that is analysed
+
+As a User,
+so I can see what people feel about my topic,
+I would like to be able to see the analysis
 ```
 
 ## Getting started
-Set up a project directory and clone the repo with `git clone this_project_url`.
+Clone the repo with `git clone this_project_url`.
 
-You will need some API keys, both locally and in your Travis CI settings:
-* A 'TWEETMOOD_SECRET_KEY' (used in settings.py) - this is automatically generated on a new Django set-up, and can be a random string. This is used for administration so keeping this secret is important.
+You will need some API keys, locally, in your Travis CI and/or Heroku settings:
 
-* An API key for Watson (used in tweetmood/watson.py) saved as 'WATSON_TONE_ANALYZER'. This can be gotten from [the bluemix website](https://console.bluemix.net/).
+* A [Django SECRET_KEY](https://github.com/kirillzabrodin/tweet_mood/blob/master/mysite/settings.py) - this is automatically generated on a new Django set-up, and can be a random string.  Keep yours hidden as it gives admin rights for the project.
 
-Make sure you have python 3 and pip 3 installed. If you have python 2 installed change python to python3 in the code below. Do the same for pip.
+* An API key for [Watson](https://github.com/kirillzabrodin/tweet_mood/blob/master/tweetmood/watson.py) - this can be gotten from [the bluemix website](https://console.bluemix.net/).
 
-Run `pip install -r requirements.txt`.
+* You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will
 
-Run `python ./manage.py runserver`. You can run the migrations as suggested if Django suggests it.
+Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip.
+
+Run `pip install -r requirements.txt`
+
+Run `python ./manage.py runserver`
 
 This defaults to port 8000, so open `localhost:8000` in your browser.
 
@@ -49,7 +56,7 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run `pytest`. Usually running `python manage.py collectstatic --noinput` is required to pass the tests.
+Run `pytest`. Usually running `python manage.py collectstatic --noinput` and `python -m textblob.download_corpora` is required to pass the tests.
 
 To see a test coverage table run `open htmlcov/index.html`
 

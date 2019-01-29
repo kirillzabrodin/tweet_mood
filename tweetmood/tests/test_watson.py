@@ -1,8 +1,7 @@
 from django.test import TestCase
 import unittest
 from unittest import mock
-from unittest.mock import patch, Mock
-from watson_developer_cloud import ToneAnalyzerV3
+from unittest.mock import patch, Mock, ANY
 from ..watson import Watson
 
 class WatsonUnitTests(TestCase):
@@ -10,17 +9,16 @@ class WatsonUnitTests(TestCase):
         mock_response_object = Mock()
         mock_response_object.get_result = Mock(return_value={})
         mock_tone_analyzer = Mock()
-        mock_tone_analyzer.tone = Mock(return_value=mock_response_object)
+        mock_tone_analyzer.analyze = Mock(return_value=mock_response_object)
         watson = Watson(mock_tone_analyzer)
-        watson.send_for_analysis('test text')
-        mock_tone_analyzer.tone.assert_called_once_with({ 'text': 'test text' },
-        'application/json')
+        watson.send_for_analysis('test text', 'test')
+        mock_tone_analyzer.analyze.assert_called_once_with(text='test text', features=ANY)
 
     def test_send_for_analysis_calls_get_result(self):
         mock_response_object = Mock()
         mock_response_object.get_result = Mock(return_value={})
         mock_tone_analyzer = Mock()
-        mock_tone_analyzer.tone = Mock(return_value=mock_response_object)
+        mock_tone_analyzer.analyze = Mock(return_value=mock_response_object)
         watson = Watson(mock_tone_analyzer)
-        watson.send_for_analysis('test text')
+        watson.send_for_analysis('test text', 'test')
         mock_response_object.get_result.assert_called_once()
