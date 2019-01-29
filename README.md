@@ -56,7 +56,7 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run `pytest`. Usually running `python manage.py collectstatic --noinput` is required to pass the tests.
+Run `pytest`. Usually running `python manage.py collectstatic --noinput` and `python -m textblob.download_corpora` is required to pass the tests.
 
 To see a test coverage table run `open htmlcov/index.html`
 
