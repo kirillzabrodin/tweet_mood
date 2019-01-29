@@ -45,14 +45,14 @@ At the moment whatever you type in will be analysed and the prominent mood displ
 
 Holmes and Watson are two distinct sentiment analysers.
 
-Holmes is a NaiveBayesClassifier, imported from textblob / nltk and subject to supervised machine learning in order to classify text as possitive or negative.
+Holmes is a NaiveBayesClassifier, imported from [TextBlob](https://textblob.readthedocs.io/en/dev/index.html#) / [NLTK](http://www.nltk.org/) and subject to supervised machine learning in order to classify text as positive or negative.
 
-By default, Holmes is trained on a sample of 2,000 tweets (1,000 positive, 1,000 negative).  These tweets were taken from the huge library available from Stanford University's [Sentiment140 project](http://help.sentiment140.com/for-students/).  The raw data from Sentimetn140 can be formatted for use by Holmes by using the program in 'tweetmood/holmes_data/csv_formatting.py' - input the relevant file paths then run:
+By default, Holmes is trained on a sample of 2,000 tweets (1,000 positive, 1,000 negative).  These tweets were taken from the huge library available from Stanford University's [Sentiment140 project](http://help.sentiment140.com/for-students/).  The raw data from Sentiment140 can be formatted for use by Holmes by using the program in 'tweetmood/holmes_data/csv_formatting.py' - input the relevant file paths then run:
 ```
 python tweetmood/holmes_data/csv_fomatting.py
 ```
 
-Holmes can be trained on different data sets - for example, replacing
+Holmes can be trained on different data sets.  This repository contains a larger formatted tweet sample set: replacing
 ```
 with open('tweetmood/holmes_data/reformatted_small_train.csv', 'r') as train:
 ```
@@ -60,7 +60,7 @@ in 'tweetmood/holmes.py' with
 ```
 with open('tweetmood/holmes_data/reformatted_train.csv', 'r') as train:
 ```
-will train Holmes on a data set of 10,000 tweets - please note this additional training takes more time.
+will train Holmes on a data set of 10,000 tweets - please note this additional training takes more time when deploying the app.
 
 To test the accuracy of Holmes once training has been completed, Holmes can be tested against a sample test data set:
 ```
