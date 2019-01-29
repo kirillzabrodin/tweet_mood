@@ -2,7 +2,6 @@ from django.test import TestCase
 import unittest
 from unittest import mock
 from unittest.mock import patch, Mock, ANY
-from watson_developer_cloud import NaturalLanguageUnderstandingV1
 from ..watson import Watson
 
 class WatsonUnitTests(TestCase):
