@@ -1,9 +1,12 @@
-import Form from './src/components/form.js'
+import Form from './components/form.js'
 
 export class HomepageView {
+  constructor(form = new Form) {
+    this.form = form
+  }
 
-  renderForm(form = Form) {
-    return form.render()
+  render() {
+    return this.form.render()
   }
 
 }

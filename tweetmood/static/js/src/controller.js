@@ -3,23 +3,15 @@ import Button from './components/button.js'
 import HomepageView from './homepageView.js'
 
 export class Controller {
-  constructor(resultsView = new ResultsView, button = new Button, homepageView = new HomepageView) {
+  constructor(resultsView = new ResultsView, homepageView = new HomepageView) {
     this.resultsView = resultsView
-    this.button = button
     this.homepageView = homepageView
-
-    this.hideresults()
-    this.listenForLondonFormSubmit()
   }
 
   displayHomepage() {
-    this.displayForm()
-    this.displayButton()
-  }
-
-  displayForm() {
-    let self = this
-    $('#london-input-form').html(this.homepageView.renderForm())
+    this.hideresults()
+    $('#london-input-form').html(this.homepageView.render())
+    this.listenForLondonFormSubmit()
   }
 
   listenForLondonFormSubmit() {
@@ -73,12 +65,13 @@ export class Controller {
 
   displayButton() {
     let self = this
-    $('#london-form').append(self.button.renderButton())
+    $('#london-form').append(self.homepageView.button.renderButton())
   }
 
   displayLoadingButton() {
-    $('#button-spinner').addClass(this.button.renderSpinnerClass())
-    $('#button-text').text(this.button.renderLoadingText())
+    console.log('want to display loading button')
+    $('#button-spinner').addClass(this.homepageView.form.button.renderSpinnerClass())
+    $('#button-text').text(this.homepageView.form.button.renderLoadingText())
   }
 
 }
