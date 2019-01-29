@@ -6,6 +6,7 @@ from .tweeterpy import Tweeterpy
 import time
 from .response_formatter import ResponseFormatter
 
+
 def index(request):
     return render(request, 'tweetmood/index.html')
 
