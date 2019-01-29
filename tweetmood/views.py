@@ -17,7 +17,11 @@ def analysis(request):
         tweets = Tweeterpy()
         response_formatter = ResponseFormatter()
         text_for_analysis = tweets.get_tweets(text)
+        if text_for_analysis == "":
+            messages.error(request,'Hmm, nobody is talking about that, ask something else')
+            return redirect('/')
         analysed_text = watson.send_for_analysis(text_for_analysis, text)
+        print(analysed_text)
         response_formatter.process(analysed_text)
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text
