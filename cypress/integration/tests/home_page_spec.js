@@ -59,7 +59,7 @@ it("contains fear title", function() {
   cy.get("h2")
   cy.should('contain', "Fear")
 })
-it("contains disgust title", function() {
+it("contains Disgust title", function() {
   cy.get("h2")
   cy.should('contain', "Disgust")
 })
