@@ -27,12 +27,13 @@ describe("Home page", function() {
     .should('have.value', 'I am very happy about cypress testing')
 
 })
-it("allows you to type input", function() {
+it("allows you to type input and submit", function() {
   cy.visit('localhost:8000')
   cy.get("form")
   cy.get('Input[name="text"]')
   .type('I am very happy about cypress testing')
-  cy.get('button').click()
+  cy.get('button')
+  .click({ force: true })
 })
 it("contains the input as the title", function() {
   cy.get("h1")
