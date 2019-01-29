@@ -1,5 +1,4 @@
 import ResultsView from './resultsView.js'
-import Button from './components/button.js'
 import HomepageView from './homepageView.js'
 
 export class Controller {
