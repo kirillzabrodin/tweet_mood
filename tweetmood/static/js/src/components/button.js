@@ -9,6 +9,10 @@
 
     renderSpinnerClass: function() {
       return "spinner-border spinner-border-sm"
+    },
+
+    renderLoadingText: function() {
+      return 'loading...'
     }
   }
 

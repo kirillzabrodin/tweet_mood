@@ -6,15 +6,21 @@ describe("Button", function() {
     button = new Button()
   })
 
+  describe("render", function() {
+    it("returns the button html", function() {
+      expect(button.render()).toEqual('<button id="button_loader" name="analyse" class="btn btn-custom btn-block mb-2" type="submit"><span id="button-text">click to find out</span><span id="button-spinner" class="" role="status" aria-hidden="false"></span></button>')
+    })
+  })
+
   describe("renderSpinnerClass", function() {
     it("returns the spinnner class information", function() {
       expect(button.renderSpinnerClass()).toEqual("spinner-border spinner-border-sm")
     })
   })
 
-  describe("render", function() {
-    it("returns the button html", function() {
-      expect(button.render()).toEqual('<button id="button_loader" name="analyse" class="btn btn-custom btn-block mb-2" type="submit"><span id="button-text">click to find out</span><span id="button-spinner" class="" role="status" aria-hidden="false"></span></button>')
+  describe("renderLoadingText", function() {
+    it("returns the loading text", function() {
+      expect(button.renderLoadingText()).toEqual('loading...')
     })
   })
 })
