@@ -1,12 +1,13 @@
 from textblob import TextBlob
 from textblob.classifiers import NaiveBayesClassifier
 
-with open('tweetmood/formatted_test.csv', 'r') as train:
+with open('tweetmood/holmes_data/reformatted_small_train.csv', 'r') as train:
     trained_classifier = NaiveBayesClassifier(train)
+
 
 class HolmesClassifier:
 
-    def __init__(self, classifier = trained_classifier):
+    def __init__(self, classifier=trained_classifier):
         self.classifier = classifier
 
     def holmes_classify(self, text):
