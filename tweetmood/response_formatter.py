@@ -2,16 +2,14 @@ class ResponseFormatter:
 
     def __init__(self):
         self.formatted_response_dict = {
-          "Joy" : 0,
-          "Anger" : 0,
-          "Sadness" : 0,
-          "Analytical" : 0,
-          "Fear" : 0,
-          "Disgust" : 0,
-          "Confident" : 0,
-          "Tentative" : 0
+          "joy" : 0,
+          "anger" : 0,
+          "sadness" : 0,
+          "fear" : 0,
+          "disgust" : 0,
          }
 
     def process(self, response):
-        for tone in response['document_tone']['tones']:
-          self.formatted_response_dict[tone['tone_name']] = int((tone['score']) * 100)
+        emotion_response = response['emotion']['targets'][0]['emotion']
+        for key in emotion_response:
+            self.formatted_response_dict[key] = round(emotion_response[key] * 100)

@@ -4,8 +4,8 @@ from ..response_formatter import ResponseFormatter
 
 class TestResponseFormatter(TestCase):
     def test_processes_response_and_turns_into_dictionary(self):
-        response = {'document_tone': {'tones': [{'score': 0.835076, 'tone_id': 'joy', 'tone_name': 'Joy'}, {'score': 0.762356, 'tone_id': 'analytical', 'tone_name': 'Analytical'}]}}
-        desired_result = {'Joy': 83, 'Anger': 0, 'Sadness': 0, 'Analytical': 76, 'Fear': 0, 'Disgust': 0, 'Confident': 0, 'Tentative': 0}
+        response = {'emotion': {'targets': [{'text': 'death', 'emotion': {'sadness': 0.372566, 'joy': 0.116822, 'fear': 0.084264, 'disgust': 0.540895, 'anger': 0.16676}}]}}
+        desired_result = {'joy': 12, 'anger': 17, 'sadness': 37, 'fear': 8, 'disgust': 54}
         response_formatter = ResponseFormatter()
         response_formatter.process(response)
         assert desired_result == response_formatter.formatted_response_dict
