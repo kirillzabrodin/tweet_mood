@@ -16,6 +16,4 @@ class Holmes:
         neg = int(round(result.prob('0'), 2) * 100)
         pwid = pos / 2
         nwid = neg / 2
-        psp = 50 - pwid
-        nsp = 50 - nwid
-        return {"pos": pos, "neg": neg, "pwid": pwid, "nwid": nwid, "psp": psp, "nsp": nsp}
+        return {"pos": pos, "neg": neg, "pwid": pwid, "nwid": nwid}

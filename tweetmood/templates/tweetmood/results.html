@@ -3,52 +3,19 @@
 {% block content %}
         <!--how is feeling right now form -->
 
-        <table class="table-fluid table-hover">
+        <div class="container">
+        <table class="table table-hover">
           <thead>
             <tr>
-              <td style="width:{{holmes.nsp}}%"></td>
-              <td class="table-danger" style="width:{{holmes.nwid}}%">-ve {{holmes.neg}}%</td>
-              <td class="table-success" style="width:{{holmes.pwid}}%">+ve {{holmes.pos}}%</td>
-              <td style="width:{{holmes.psp}}%"></td>
+              <td style="width:{{holmes.pwid}}%"></td>
+              <td class="bg-danger" style="width:{{holmes.nwid}}%">-ve {{holmes.neg}}%</td>
+              <td class="bg-success" style="width:{{holmes.pwid}}%">+ve {{holmes.pos}}%</td>
+              <td style="width:{{holmes.nwid}}%"></td>
             </tr>
           </thead>
           </table>
-
-
-<!-- <div class="container-fluid">
-    <div class="row neg-background">
-      <div class="col">
-      </div>
-      <div class="col neg-background">
-        Negative: {{holmes.neg}}
-      </div>
-      <div class="col pos-background">
-        Positive: {{holmes.pos}}
-      </div>
-      <div class="col">
-      </div>
-    </div>
-</div> -->
-
-
-
-
-          <!-- <ul>{% for tone, score in holmes.items %}
-            <h2>{{tone}}</h2>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{score}}" aria-valuemin="0" aria-valuemax="100" style="width:{{score}}%"></div>
-            </div>
-          </ul>{% endfor %}
           </div>
-          </div> -->
-        <!-- <h2>{{Positive}}</h2>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{holmes.pos}}" aria-valuemin="0" aria-valuemax="100" style="width:{{score}}%"></div>
-        </div>
-        <h2>{{Negative}}</h2>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{holmes.neg}}" aria-valuemin="0" aria-valuemax="100" style="width:{{score}}%"></div>
-        </div> -->
+
 
         <div class="container" id="london-input-form">
           <div id="results" class="text-center">
