@@ -14,4 +14,6 @@ class Holmes:
         result = self.classifier.prob_classify(text)
         pos = int(round(result.prob('4'), 2) * 100)
         neg = int(round(result.prob('0'), 2) * 100)
-        return {"pos": pos, "neg": neg}
+        pwid = pos / 2
+        nwid = neg / 2
+        return {"pos": pos, "neg": neg, "pwid": pwid, "nwid": nwid}

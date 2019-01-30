@@ -20,6 +20,10 @@
 
     renderUsersInputText: function(text) {
       return `<h1 id="users-text">${text}</h1>`
+    },
+
+    renderHolmesResult: function(data) {
+      return `<table class='table table-hover'><thead><tr><td style='width:${data.pwid}%'></td><td class='bg-danger' style='width:${data.nwid}%'><h3>-ve ${data.neg}%</h3></td><td class='bg-success' style='width:${data.pwid}%'><h3>+ve ${data.pos}%</h3></td><td style='width:${data.nwid}%'></td></tr></thead></table>`
     }
   }
 

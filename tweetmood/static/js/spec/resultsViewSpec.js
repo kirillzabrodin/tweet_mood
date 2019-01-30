@@ -31,6 +31,13 @@ describe("ResultsView", function() {
     })
   })
 
-
+  describe("renderHolmesResult", function() {
+    it("adds Holmes results to html", function() {
+      var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" :25 }
+      var result = resultsView.renderHolmesResult(data)
+      var expectedResult = "<table class='table table-hover'><thead><tr><td style='width:25%'></td><td class='bg-danger' style='width:25%'><h3>-ve 50%</h3></td><td class='bg-success' style='width:25%'><h3>+ve 50%</h3></td><td style='width:25%'></td></tr></thead></table>"
+      expect(result).toEqual(expectedResult)
+    })
+  })
 
 })

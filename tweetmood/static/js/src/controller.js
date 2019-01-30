@@ -18,7 +18,6 @@
       $('#london-form').submit(function(e) {
         e.preventDefault()
         self._displayLoadingButton()
-        console.log('posted')
         self._postFormData($('#london-form'))
       })
     },
@@ -39,8 +38,10 @@
       var self = this
       var text = data.response
       var response_dict = data.response_dict
+      var holmes_result = data.holmes_result
       $('#results').show()
       $('#results').html(self.resultsView.renderUsersInputText(text))
+      $('#holmes_results').append(self.resultsView.renderHolmesResult(holmes_result))
       $('#results').append(self.resultsView.renderProgressDiv())
       $('#progress-results').append(self.resultsView.renderProgressBars(response_dict))
     },
