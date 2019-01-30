@@ -1,5 +1,15 @@
 {% extends "tweetmood/header.html" %}
 {% block content %}
+{% for message in messages %}
+
+                 <div class="alert alert-success">
+                     <a class="close" href="#" data-dismiss="alert">×</a>
+
+                     {{ message }}
+
+                 </div>
+         {% endfor %}
+
         <!-- how is feeling right now form -->
         <div class="container" id="london-input-form">
           <div class="row col-md-6 offset-md-3 text-center">
