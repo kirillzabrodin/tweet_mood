@@ -13,7 +13,7 @@ class APITest(LiveServerTestCase):
 
     def setUp(self):
         options = Options()
-        # options.add_argument('-headless')
+        options.add_argument('-headless')
         self.selenium = webdriver.Firefox(options=options)
         super(APITest, self).setUp()
 
@@ -30,7 +30,5 @@ class APITest(LiveServerTestCase):
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
-        time.sleep(20)
-        users_text = selenium.find_element_by_id('body')
-        time.sleep(100)
+        users_text = selenium.find_element_by_id('users-text').text
         assert 'Test' in users_text
