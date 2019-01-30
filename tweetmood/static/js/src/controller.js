@@ -37,7 +37,7 @@
 
     _displayResults: function(data) {
       var self = this
-      var text = data.text
+      var text = data.response
       var response_dict = data.response_dict
       $('#results').show()
       $('#results').html(self.resultsView.renderUsersInputText(text))
