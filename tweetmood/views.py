@@ -22,6 +22,9 @@ def analysis(request):
             return redirect('/')
         analysed_text = watson.send_for_analysis(text_for_analysis, text)
         print(analysed_text)
+        if 'warnings' in analysed_text:
+            messages.error(request,"Hmm, Watson didn't like that, try rephrasing the question")
+            return redirect('/')
         response_formatter.process(analysed_text)
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text
