@@ -25,6 +25,8 @@ class HelloWorldTest(LiveServerTestCase):
         selenium = self.selenium
         selenium.get(self.live_server_url + '/analysis')
         body_text = selenium.find_element_by_tag_name('body').text
+        print('a passing test body')
+        print(body_text)
         assert 'You did not submit to analysis' in body_text
 
     def test_no_result_shortcut(self):

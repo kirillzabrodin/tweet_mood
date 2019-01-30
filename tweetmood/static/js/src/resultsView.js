@@ -3,6 +3,7 @@
   function ResultsView() {}
 
   ResultsView.prototype = {
+
     renderProgressBars: function(data) {
       var results = []
       for(var tone in data) {

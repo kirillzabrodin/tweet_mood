@@ -8,9 +8,9 @@
   Controller.prototype = {
     displayHomepage: function() {
       var self = this
-      self._hideresults()
-      $('#london-input-form').html(self.homepageView.render())
-      self._listenForLondonFormSubmit()
+      this._hideresults()
+      $('#london-input-form').html(this.homepageView.render())
+      this._listenForLondonFormSubmit()
     },
 
     _listenForLondonFormSubmit: function() {
@@ -46,7 +46,7 @@
       var text = data.text
       var response_dict = data.response_dict
       $('#results').show()
-      $('#results').append(self.resultsView.renderUsersInputText(text))
+      $('#results').html(self.resultsView.renderUsersInputText(text))
       $('#results').append(self.resultsView.renderProgressDiv())
       $('#progress-results').append(self.resultsView.renderProgressBars(response_dict))
     },
