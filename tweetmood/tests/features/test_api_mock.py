@@ -2,6 +2,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from tweetmood.watson import Watson
+import time
 import unittest
 from unittest import mock
 from unittest.mock import patch
@@ -12,7 +13,7 @@ class APITest(LiveServerTestCase):
 
     def setUp(self):
         options = Options()
-        options.add_argument('-headless')
+        # options.add_argument('-headless')
         self.selenium = webdriver.Firefox(options=options)
         super(APITest, self).setUp()
 
@@ -26,10 +27,12 @@ class APITest(LiveServerTestCase):
         mock_analysis.return_value = response
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(150)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         body = selenium.find_element_by_name('body')
         selenium.find_element_by_id('button_loader').click()
+        time.sleep(15)
         text_field = selenium.find_element_by_name('text')
         body = selenium.find_element_by_name('body')
         users_text = selenium.find_element_by_id('users-text').text
