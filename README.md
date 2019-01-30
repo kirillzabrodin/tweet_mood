@@ -34,7 +34,7 @@ You will need some API keys, locally, in your Travis CI and/or Heroku settings:
 
 * An API key for [Watson](https://github.com/kirillzabrodin/tweet_mood/blob/master/tweetmood/watson.py) - this can be gotten from [the bluemix website](https://console.bluemix.net/).
 
-* You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will
+* You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will go into your environment as the twitter documentation instructs you.
 
 Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip.
 
