@@ -5,7 +5,9 @@ from tweetmood.watson import Watson
 import unittest
 from unittest import mock
 from unittest.mock import patch
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class APITest(LiveServerTestCase):
 
@@ -25,8 +27,8 @@ class APITest(LiveServerTestCase):
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
-        body_text = selenium.find_element_by_tag_name('body').text
-        assert 'Test' in body_text
+        users_text = selenium.find_element_by_id('users-text').text
+        assert 'Test' in users_text
 
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_no_response_from_twitter(self, mock_tweets):
