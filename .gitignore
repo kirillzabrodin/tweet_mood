@@ -6,3 +6,5 @@ geckodriver.log
 *.DS_Store
 staticfiles
 db.sqlite3
+node_modules/*
+cypress/videos/*

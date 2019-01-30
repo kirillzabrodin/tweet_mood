@@ -1,21 +1,21 @@
-.progress-bar-Joy {
-  background-color: pink !important;
+.progress-bar-joy {
+  background-color: cyan !important;
 }
 
-.progress-bar-Anger {
+.progress-bar-anger {
   background-color: red !important;
 }
 
-.progress-bar-Sadness {
+.progress-bar-sadness {
   background-color: purple !important;
 }
 
-.progress-bar-Fear {
-  background-color: yellow !important;
+.progress-bar-fear {
+  background-color: black !important;
 }
 
-.progress-bar-Disgust {
-  background-color: green !important;
+.progress-bar-disgust {
+  background-color: brown !important;
 }
 
 #results {

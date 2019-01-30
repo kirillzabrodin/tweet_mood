@@ -18,6 +18,7 @@
       $('#london-form').submit(function(e) {
         e.preventDefault()
         self._displayLoadingButton()
+        console.log('posted')
         self._postFormData($('#london-form'))
       })
     },
@@ -29,21 +30,14 @@
         data: form.serialize(),
         success: (data) => {
           this._hideInputForm()
-          this._getResults(data)
+          this._displayResults(data)
         }
-      })
-    },
-
-    _getResults: function(data) {
-      var url = "http://localhost:8000/result"
-      $.get(url, (data) => {
-        this._displayResults(data)
       })
     },
 
     _displayResults: function(data) {
       var self = this
-      var text = data.text
+      var text = data.response
       var response_dict = data.response_dict
       $('#results').show()
       $('#results').html(self.resultsView.renderUsersInputText(text))
