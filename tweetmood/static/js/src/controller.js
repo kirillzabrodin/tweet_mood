@@ -29,17 +29,17 @@
         data: form.serialize(),
         success: (data) => {
           this._hideInputForm()
-          this._getResults(data)
+          this._displayResults(data)
         }
       })
     },
 
-    _getResults: function(data) {
-      var url = "http://localhost:8000/result"
-      $.get(url, (data) => {
-        this._displayResults(data)
-      })
-    },
+    // _getResults: function(data) {
+    //   var url = "/result"
+    //   $.get(url, (data) => {
+    //     this._displayResults(data)
+    //   })
+    // },
 
     _displayResults: function(data) {
       var self = this

@@ -18,15 +18,14 @@ def analysis(request):
         response_dict = response_formatter.formatted_response_dict
         request.session['text'] = text
         request.session['response_dict'] = response_dict
-        return redirect('/result')
-    else:
-        return HttpResponse("You did not submit to analysis")
-
-
-def result(request):
-    if 'text' not in request.session:
-        return HttpResponse("You did not submit to analysis")
-    else:
-        response_dict = request.session['response_dict']
-        text = request.session["text"]
         return JsonResponse({'response_dict' : response_dict, "text" : text})
+    else:
+        return HttpResponse("You did not submit to analysis")
+
+# def result(request):
+#     if 'text' not in request.session:
+#         return HttpResponse("You did not submit to analysis")
+#     else:
+#         response_dict = request.session['response_dict']
+#         text = request.session["text"]
+#         return JsonResponse({'response_dict' : response_dict, "text" : text})
