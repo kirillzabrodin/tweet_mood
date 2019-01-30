@@ -14,7 +14,7 @@ class APITest(LiveServerTestCase):
 
     def setUp(self):
         options = Options()
-        # options.add_argument('-headless')
+        options.add_argument('-headless')
         self.selenium = webdriver.Firefox(options=options)
         super(APITest, self).setUp()
 
@@ -25,7 +25,6 @@ class APITest(LiveServerTestCase):
         mock_analysis.return_value = {'usage': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
         selenium = self.selenium
         selenium.get(self.live_server_url)
-        time.sleep(150)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
@@ -45,7 +44,7 @@ class APITest(LiveServerTestCase):
 
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
-    def test_submit_text_with_api_warning(self, mock_tweets, mock_analysis):
+    def test_submit_text_with_watson_warning(self, mock_tweets, mock_analysis):
         mock_tweets.return_value = "Brexit tweets"
         mock_analysis.return_value = {'warnings': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
         selenium = self.selenium
