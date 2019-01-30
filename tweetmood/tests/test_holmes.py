@@ -14,4 +14,4 @@ class HolmesUnitTests(TestCase):
         mock_NBC = Mock()
         mock_NBC.prob_classify = Mock(return_value=mock_prob)
         holmes = Holmes(mock_NBC)
-        assert holmes.holmes_classify('love') == {"pos": 50, "neg": 50}
+        assert holmes.holmes_classify('love') == {"pos": 50, "neg": 50, "pwid": 25, "nwid": 25, "psp": 25, "nsp": 25}
