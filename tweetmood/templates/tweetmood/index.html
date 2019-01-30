@@ -1,29 +1,11 @@
 {% extends "tweetmood/header.html" %}
 {% block content %}
-{% for message in messages %}
-
-                 <div class="alert alert-success">
-                     <a class="close" href="#" data-dismiss="alert">×</a>
-
-                     {{ message }}
-
-                 </div>
-         {% endfor %}
-
-        <!-- how is feeling right now form -->
-        <div class="container" id="london-input-form">
-          <div class="row col-md-6 offset-md-3 text-center">
-            <form class="form-inline" action="/analysis" method="post">
-              {% csrf_token %}
-              <h1>How does London feel about <input required class="form-control" id="city-form-input" type="text" name="text" value=""> right now?</h1>
-              <button name="analyse" type="submit" id="button_loader" class="btn btn-custom btn-block mb-2">click to find out</button>
-            </form>
-
-          </div>
-        </div>
-      <!-- divs below here are from header file -->
-      </div>
-    </div>
-  </div>
+  <!-- input form -->
+  <div class="container" id="london-input-form"></div>
+  <!-- holmes results -->
+  <div id="holmes_results" class="container text-center"></div>
+  <!-- watson results -->
+  <div id="results" class="container text-center"></div>
+<!-- div below from header -->
 </div>
 {% endblock %}
