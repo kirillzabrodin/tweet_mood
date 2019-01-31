@@ -28,7 +28,4 @@ def analysis(request):
         return JsonResponse({'response' : "Hmm, Watson didn't like that, try rephrasing the question"})
     response_formatter.process(analysed_text)
     response_dict = response_formatter.formatted_response_dict
-    request.session['text'] = text
-    request.session['response_dict'] = response_dict
-    request.session['holmes_result'] = holmes_result
     return JsonResponse({'response_dict' : response_dict, "response" : text, "holmes_result" : holmes_result})

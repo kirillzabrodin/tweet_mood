@@ -3,21 +3,22 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from tweetmood.watson import Watson
 from tweetmood.holmes import Holmes
-import time
 import unittest
 from unittest import mock
 from unittest.mock import patch
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from mock_watson_responses import MockWatsonResponses
+from mock_holmes_responses import MockHolmesResponses
 
-class APITest(LiveServerTestCase):
+mock_watson_responses = MockWatsonResponses()
+
+class UserInteractionTests(LiveServerTestCase):
 
     def setUp(self):
         options = Options()
         options.add_argument('-headless')
         self.selenium = webdriver.Firefox(options=options)
-        super(APITest, self).setUp()
+        super(UserInteractionTests, self).setUp()
 
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.holmes.Holmes.holmes_classify')
@@ -25,7 +26,7 @@ class APITest(LiveServerTestCase):
     def test_submit_text_with_mock_api(self, mock_tweets, mock_holmes, mock_analysis):
         mock_tweets.return_value = "Brexit tweets"
         mock_holmes.return_value = {"pos": 50, "neg": 50, "pwid": 25, "nwid": 25, "feeling": "ambivalent"}
-        mock_analysis.return_value = {'usage': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
+        mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
@@ -38,7 +39,7 @@ class APITest(LiveServerTestCase):
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_twitter_no_results(self, mock_tweets, mock_analysis):
         mock_tweets.return_value = ""
-        mock_analysis.return_value = {'usage': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
+        mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
@@ -53,7 +54,7 @@ class APITest(LiveServerTestCase):
     def test_submit_text_with_watson_warning(self, mock_tweets, mock_holmes, mock_analysis):
         mock_tweets.return_value = "Brexit tweets"
         mock_holmes.return_value = {"pos": 50, "neg": 50, "pwid": 25, "nwid": 25, "feeling": "ambivalent"}
-        mock_analysis.return_value = {'warnings': {'text_units': 1, 'text_characters': 8531, 'features': 2}, 'language': 'en', 'keywords': [{'text': 'video Brexit Crisis', 'relevance': 0.808171, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}, {'text': 'deal Brexit warnings', 'relevance': 0.736128, 'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}, 'count': 1}], 'emotion': {'targets': [{'text': 'brexit', 'emotion': {'sadness': 0.594142, 'joy': 0.536118, 'fear': 0.132222, 'disgust': 0.25296, 'anger': 0.50368}}], 'document': {'emotion': {'sadness': 0.123281, 'joy': 0.2856, 'fear': 0.00047, 'disgust': 0.363526, 'anger': 0.466701}}}}
+        mock_analysis.return_value = mock_watson_responses.mock_warnings_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
         text_field = selenium.find_element_by_name('text')
@@ -64,4 +65,4 @@ class APITest(LiveServerTestCase):
 
     def tearDown(self):
         self.selenium.quit()
-        super(APITest, self).tearDown()
+        super(UserInteractionTests, self).tearDown()

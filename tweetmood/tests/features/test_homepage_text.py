@@ -26,7 +26,7 @@ class HomepageTest(LiveServerTestCase):
         selenium = self.selenium
         selenium.get(self.live_server_url)
         button_text = selenium.find_element_by_tag_name('button').text
-        assert 'click to find out' in button_text
+        assert 'Ask Holmes & Watson...' in button_text
 
     @patch('tweetmood.views.analysis')
     def test_loading_button_text(self, mock_view_response):
@@ -36,4 +36,4 @@ class HomepageTest(LiveServerTestCase):
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
         button_text = selenium.find_element_by_tag_name('button').text
-        assert 'loading...' in button_text
+        assert 'Hmmm...a 3 patch problem...' in button_text
