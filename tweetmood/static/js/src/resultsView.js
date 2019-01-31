@@ -4,19 +4,27 @@
 
   ResultsView.prototype = {
 
-    renderHolmesHeader: function(text, data) {
+    render: function(text, dict, res) {
+      return [this._renderHolmesHeader(text, res),
+      this._renderHolmesResult(res),
+      this._renderWatsonHeader(),
+      this._renderProgressDiv(),
+      this._renderProgressBars(dict)].join("")
+    },
+
+    _renderHolmesHeader: function(text, data) {
       return `<h2 id="users-text">Holmes has deduced that London feels ${data.feeling} about ${text}:</h2>`
     },
 
-    renderHolmesResult: function(data) {
+    _renderHolmesResult: function(data) {
       return `<table class='table table-hover'><thead><tr><td style='width:${data.pwid}%'></td><td class='bg-danger' style='width:${data.nwid}%'><h3>-ve ${data.neg}%</h3></td><td class='bg-success' style='width:${data.pwid}%'><h3>+ve ${data.pos}%</h3></td><td style='width:${data.nwid}%'></td></tr></thead></table>`
     },
 
-    renderWatsonHeader: function() {
+    _renderWatsonHeader: function() {
       return '<h2>Meanwhile, Watson had a more nuanced take:</h2>'
     },
 
-    renderProgressBars: function(data) {
+    _renderProgressBars: function(data) {
       var results = []
       for(var tone in data) {
         var toneName = tone
@@ -26,7 +34,7 @@
       return results.join("")
     },
 
-    renderProgressDiv: function() {
+    _renderProgressDiv: function() {
       return '<div id="progress-results"></div>'
     },
 

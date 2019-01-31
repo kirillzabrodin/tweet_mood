@@ -27,7 +27,6 @@
         data: form.serialize(),
         success: (data) => {
           $(form).hide()
-          this._hideInputForm()
           this._displayResults(data)
         }
       })
