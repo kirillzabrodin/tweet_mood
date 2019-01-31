@@ -17,35 +17,25 @@
         return this._renderErrorMessage(user_text)
       }
     },
-    // done
+
     _renderHolmesHeader: function(user_text, holmes_res) {
-      return `<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ${holmes_res.feeling} about ${user_text}:</h2>`
-    },
-    // done
-    _renderHolmesResult: function(holmes_res) {
-      return `<table id='holmes-results' class='table table-hover'><thead><tr><td style='width:${holmes_res.pwid}%'></td><td class='bg-danger' style='width:${holmes_res.nwid}%'><h3>-ve ${holmes_res.neg}%</h3></td><td class='bg-success' style='width:${holmes_res.pwid}%'><h3>+ve ${holmes_res.pos}%</h3></td><td style='width:${holmes_res.nwid}%'></td></tr></thead></table>`
-    },
-    // done
-    _renderWatsonHeader: function(data) {
-      return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
-    },
-    // done
-    _renderWatsonResult: function(watson_res) {
-      var results = []
-      for(var tone in watson_res) {
-        var toneName = tone
-        var toneScore = watson_res[tone]
-        results.push(`<h1>${toneName} - ${toneScore}%</h1><div id='progress-results' class='progress'><div id='${toneName}' class='progress-bar-striped progress-bar-${toneName}' role='progressbar' style='width: ${toneScore}%' aria-valuenow='${toneScore}' aria-valuemin='0' aria-valuemax='100'></div>'</div>`)
-      }
-      return [
-        "<div id='progress=results'>",
-        results.join(""),
-        '</div>'
-      ].join("")
+      HolmesHeader.render(user_text, holmes_res)
     },
 
+    _renderHolmesResult: function(holmes_res) {
+      HolmesResults.render(holmes_res)
+    },
+
+    _renderWatsonHeader: function(data) {
+      WatsonHeader.render(data)
+    },
+
+    _renderWatsonResult: function(watson_res) {
+      WatsonResults.render(watson_res)
+    },
+    // done
     _renderErrorMessage: function(user_text) {
-      return `<h2 id="users-text">${user_text}</h2>`
+      ErrorMessage.render(user_text)
     }
 
   }

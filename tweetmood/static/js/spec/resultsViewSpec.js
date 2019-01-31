@@ -7,46 +7,42 @@ describe("ResultsView", function() {
   })
 
   describe("_renderHolmesHeader", function() {
-    it("returns Holmes Header information in html", function() {
-      var text = 'Test'
-      var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" : 25, "feeling" : "ambivalent" }
-      var result = resultsView._renderHolmesHeader(text, data)
-      var expectedResult = '<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ambivalent about Test:</h2>'
-      expect(result).toEqual(expectedResult)
+    it("calls HolmesHeader.render", function() {
+      spyOn(HolmesHeader, "render")
+      resultsView._renderHolmesHeader("text", "holmes results")
+      expect(HolmesHeader.render).toHaveBeenCalledWith("text", "holmes results")
     })
   })
 
   describe("_renderHolmesResult", function() {
-    it("adds Holmes results to html", function() {
-      var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" : 25, "feeling" : "ambivalent" }
-      var result = resultsView._renderHolmesResult(data)
-      var expectedResult = "<table id='holmes-results' class='table table-hover'><thead><tr><td style='width:25%'></td><td class='bg-danger' style='width:25%'><h3>-ve 50%</h3></td><td class='bg-success' style='width:25%'><h3>+ve 50%</h3></td><td style='width:25%'></td></tr></thead></table>"
-      expect(result).toEqual(expectedResult)
+    it("calls HolmesResults.render", function() {
+      spyOn(HolmesResults, "render")
+      resultsView._renderHolmesResult("holmes results")
+      expect(HolmesResults.render).toHaveBeenCalledWith("holmes results")
     })
   })
 
   describe("_renderWatsonHeader", function() {
-    it("returns Watson Header information in html", function() {
-      var result = resultsView._renderWatsonHeader()
-      var expectedResult = '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
-      expect(result).toEqual(expectedResult)
+    it("calls WatsonHeader.render", function() {
+      spyOn(WatsonHeader, "render")
+      resultsView._renderWatsonHeader("data")
+      expect(WatsonHeader.render).toHaveBeenCalledWith("data")
     })
   })
 
   describe("_renderWatsonResults", function() {
-    it("returns html of progress bars with data added", function() {
-      var data = { "Joy" : 10, "Anger" : 0  }
-      var result = resultsView._renderWatsonResult(data)
-      expectedResult = "<div id='progress=results'><h1>Joy - 10%</h1><div id='progress-results' class='progress'><div id='Joy' class='progress-bar-striped progress-bar-Joy' role='progressbar' style='width: 10%' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100'></div>'</div><h1>Anger - 0%</h1><div id='progress-results' class='progress'><div id='Anger' class='progress-bar-striped progress-bar-Anger' role='progressbar' style='width: 0%' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div>'</div></div>"
-      expect(result).toEqual(expectedResult)
+    it("calls WatsonResults.render", function() {
+      spyOn(WatsonResults, "render")
+      resultsView._renderWatsonResult("watson results")
+      expect(WatsonResults.render).toHaveBeenCalledWith("watson results")
     })
   })
 
   describe("_renderErrorMessage", function() {
-    it("returns an error message in html", function() {
-      var result = resultsView._renderErrorMessage("Error")
-      var expectedResult = '<h2 id="users-text">Error</h2>'
-      expect(result).toEqual(expectedResult)
+    it("calls ErrorMessage.render", function() {
+      spyOn(ErrorMessage, "render")
+      resultsView._renderErrorMessage("error")
+      expect(ErrorMessage.render).toHaveBeenCalledWith("error")
     })
   })
 
