@@ -11,7 +11,7 @@ describe("ResultsView", function() {
       var text = 'Test'
       var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" : 25, "feeling" : "ambivalent" }
       var result = resultsView._renderHolmesHeader(text, data)
-      var expectedResult = '<h2 id="users-text">Holmes has deduced that London feels ambivalent about Test:</h2>'
+      var expectedResult = '<h2 id="users-text">Holmes deduced that London feels ambivalent about Test:</h2>'
       expect(result).toEqual(expectedResult)
     })
   })
@@ -20,7 +20,7 @@ describe("ResultsView", function() {
     it("adds Holmes results to html", function() {
       var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" : 25, "feeling" : "ambivalent" }
       var result = resultsView._renderHolmesResult(data)
-      var expectedResult = "<table class='table table-hover'><thead><tr><td style='width:25%'></td><td class='bg-danger' style='width:25%'><h3>-ve 50%</h3></td><td class='bg-success' style='width:25%'><h3>+ve 50%</h3></td><td style='width:25%'></td></tr></thead></table>"
+      var expectedResult = "<table class='table table-borderless table-hover'><thead><tr><td class='table-secondary' style='width:25%'></td><td class='table-danger' style='width:25%'><h3>-ve 50%</h3></td><td class='table-success' style='width:25%'><h3>+ve 50%</h3></td><td class='table-secondary' style='width:25%'></td></tr></thead></table>"
       expect(result).toEqual(expectedResult)
     })
   })
