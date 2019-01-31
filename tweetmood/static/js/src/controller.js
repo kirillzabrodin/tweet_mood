@@ -34,8 +34,8 @@
 
     _displayResults: function(data) {
       var text = data.response
-      var res_dict = data.response_dict
-      var holmes_res = data.holmes_result
+      var res_dict = data.response_dict || {}
+      var holmes_res = data.holmes_result || {}
       $('#app').html(this.resultsView.render(text, res_dict, holmes_res))
     },
 

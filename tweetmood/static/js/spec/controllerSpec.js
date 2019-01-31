@@ -5,16 +5,11 @@ describe("Controller", function() {
 
   beforeEach(function() {
     homepageView = jasmine.createSpyObj('homepageView', ['render'])
-    controller = new Controller(homepageView)
+    resultsView = jasmine.createSpyObj('resultsView', ['render'])
+    controller = new Controller(resultsView, homepageView)
   })
 
   describe("displayHomepage", function() {
-    it("hids the results section", function() {
-      spyOn($.fn, "hide")
-      controller.displayHomepage()
-      expect($.fn.hide).toHaveBeenCalled()
-    })
-
     it("renders the homepage view", function() {
       spyOn($.fn, "html")
       controller.displayHomepage()
@@ -22,9 +17,9 @@ describe("Controller", function() {
     })
 
     it("listens for form submit", function() {
-      spyOn(controller, "_listenForLondonFormSubmit")
+      spyOn(controller, "_listenForFormSubmit")
       controller.displayHomepage()
-      expect(controller._listenForLondonFormSubmit).toHaveBeenCalled()
+      expect(controller._listenForFormSubmit).toHaveBeenCalled()
     })
   })
 
