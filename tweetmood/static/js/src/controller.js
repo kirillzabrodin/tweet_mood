@@ -33,10 +33,10 @@
     },
 
     _displayResults: function(data) {
-      var text = data.response
-      var res_dict = data.response_dict || {}
+      var user_text = data.response
+      var watson_res = data.response_dict || {}
       var holmes_res = data.holmes_result || {}
-      $('#app').html(this.resultsView.render(text, res_dict, holmes_res))
+      $('#app').html(this.resultsView.render(user_text, watson_res, holmes_res))
     },
 
     _displayLoadingButton: function() {

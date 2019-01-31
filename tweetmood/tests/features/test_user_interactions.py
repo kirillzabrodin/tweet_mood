@@ -4,6 +4,7 @@ from selenium.webdriver.firefox.options import Options
 from tweetmood.watson import Watson
 from tweetmood.holmes import Holmes
 import unittest
+import time
 from unittest import mock
 from unittest.mock import patch
 from selenium.webdriver.support.ui import WebDriverWait
@@ -32,6 +33,7 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
@@ -45,6 +47,7 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
@@ -60,6 +63,7 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_warnings_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
