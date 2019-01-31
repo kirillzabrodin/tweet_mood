@@ -20,12 +20,12 @@ def analysis(request):
     tweets = Tweeterpy()
     response_formatter = ResponseFormatter()
     text_for_analysis = tweets.get_tweets(text)
-    if not text_for_analysis:
-        return JsonResponse({'response' : 'Hmm, nobody is talking about that, ask something else'})
+    if text_for_analysis == '':
+        return JsonResponse({'response' : 'Hmm, nobody is talking about that, ask something else', "holmes_result" : {"pos " : 0, "neg" : 0, "pwid" : 0, "nwid": 0, "feeling": "confused" }})
     holmes_result = holmes.holmes_classify(text)
     analysed_text = watson.send_for_analysis(text_for_analysis, text)
     if 'warnings' in analysed_text:
-        return JsonResponse({'response' : "Hmm, Watson didn't like that, try rephrasing the question"})
+        return JsonResponse({'response' : "Hmm, Watson didn't like that, try rephrasing the question", "holmes_result" : {"pos " : 0, "neg" : 0, "pwid" : 0, "nwid": 0, "feeling": "confused" }})
     response_formatter.process(analysed_text)
     response_dict = response_formatter.formatted_response_dict
     request.session['text'] = text
