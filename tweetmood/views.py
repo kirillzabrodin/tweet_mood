@@ -20,7 +20,7 @@ def analysis(request):
     tweets = Tweeterpy()
     response_formatter = ResponseFormatter()
     text_for_analysis = tweets.get_tweets(text)
-    if not text_for_analysis:
+    if text_for_analysis == '':
         return JsonResponse({'response' : 'Hmm, nobody is talking about that, ask something else'})
     holmes_result = holmes.holmes_classify(text)
     analysed_text = watson.send_for_analysis(text_for_analysis, text)

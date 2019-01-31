@@ -44,6 +44,8 @@ Run `python ./manage.py runserver`
 
 This defaults to port 8000, so open `localhost:8000` in your browser.
 
+Please note that the app will take a short while to deploy as Holmes (see below) will take approximately 10-15 seconds to train on deployment.
+
 ## Usage
 
 At the moment whatever you type in will be analysed and the prominent mood displayed. Further progress will be shared shortly.
