@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import JsonResponse
 from .watson import Watson
 from .holmes import Holmes
 from .tweeterpy import Tweeterpy
@@ -21,9 +21,9 @@ def analysis(request):
     if text_for_analysis == '':
         return JsonResponse({'response' : 'Hmm, nobody is talking about that, ask something else'})
     holmes_result = holmes.holmes_classify(text)
-    analysed_text = watson.send_for_analysis(text_for_analysis, text)
-    if 'warnings' in analysed_text:
+    watson_result = watson.send_for_analysis(text_for_analysis, text)
+    if 'warnings' in watson_result:
         return JsonResponse({'response' : "Hmm, Watson didn't like that, try rephrasing the question"})
-    response_formatter.process(analysed_text)
-    response_dict = response_formatter.formatted_response_dict
-    return JsonResponse({'response_dict' : response_dict, "response" : text, "holmes_result" : holmes_result})
+    response_formatter.process(watson_result)
+    watson_result = response_formatter.formatted_response_dict
+    return JsonResponse({'watson_result' : watson_result, "response" : text, "holmes_result" : holmes_result})
