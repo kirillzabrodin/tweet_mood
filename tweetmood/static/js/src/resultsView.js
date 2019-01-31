@@ -29,7 +29,7 @@
     _renderWatsonHeader: function(data) {
       return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
     },
-
+    // done
     _renderWatsonResult: function(watson_res) {
       var results = []
       for(var tone in watson_res) {
