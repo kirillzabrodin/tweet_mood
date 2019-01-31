@@ -88,6 +88,7 @@ Watson is a question answering system developed by IBM's DeepQA project.  Tweetm
 The testing framework uses:
 * pytest (including pytest-django and pytest-cov for coverage)
 * selenium
+* jasmine
 
 As selenium is used, make sure you have Firefox installed.
 
