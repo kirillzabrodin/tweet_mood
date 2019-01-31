@@ -23,11 +23,11 @@
     },
 
     _renderHolmesResult: function(holmes_res) {
-      return `<table class='table table-hover'><thead><tr><td style='width:${holmes_res.pwid}%'></td><td class='bg-danger' style='width:${holmes_res.nwid}%'><h3>-ve ${holmes_res.neg}%</h3></td><td class='bg-success' style='width:${holmes_res.pwid}%'><h3>+ve ${holmes_res.pos}%</h3></td><td style='width:${holmes_res.nwid}%'></td></tr></thead></table>`
+      return `<table id='holmes-results' class='table table-hover'><thead><tr><td style='width:${holmes_res.pwid}%'></td><td class='bg-danger' style='width:${holmes_res.nwid}%'><h3>-ve ${holmes_res.neg}%</h3></td><td class='bg-success' style='width:${holmes_res.pwid}%'><h3>+ve ${holmes_res.pos}%</h3></td><td style='width:${holmes_res.nwid}%'></td></tr></thead></table>`
     },
 
     _renderWatsonHeader: function(data) {
-        return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
+      return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
     },
 
     _renderWatsonResult: function(watson_res) {
