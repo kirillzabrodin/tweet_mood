@@ -1,4 +1,4 @@
-# TweetMood   [![Build Status](https://travis-ci.com/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.com/kirillzabrodin/tweet_mood)   [![codecov](https://codecov.io/gh/kirillzabrodin/tweet_mood/branch/master/graph/badge.svg)](https://codecov.io/gh/kirillzabrodin/tweet_mood)
+# TweetMood   [![Build Status](https://travis-ci.com/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.com/kirillzabrodin/tweet_mood)   [![codecov](https://codecov.io/gh/kirillzabrodin/tweet_mood/branch/master/graph/badge.svg)](https://codecov.io/gh/kirillzabrodin/tweet_mood)   [![Maintainability](https://api.codeclimate.com/v1/badges/c36bb6965805cd5f41af/maintainability)](https://codeclimate.com/github/kirillzabrodin/tweet_mood/maintainability)
 An application for analysing the emotions in text
 
 ### [Team](https://github.com/kirillzabrodin/tweet_mood#team) |  [User stories](https://github.com/kirillzabrodin/tweet_mood#user-stories) |  [Getting started](https://github.com/kirillzabrodin/tweet_mood#getting-started) |  [Usage](https://github.com/kirillzabrodin/tweet_mood#usage) |  [Testing](https://github.com/kirillzabrodin/tweet_mood#testing) |   [Deployment](https://github.com/kirillzabrodin/tweet_mood#deployment) |   [Our approach](https://github.com/kirillzabrodin/tweet_mood#our-approach) |  [Contributing](https://github.com/kirillzabrodin/tweet_mood#contributing)
@@ -36,11 +36,11 @@ You will need some API keys, locally, in your Travis CI and/or Heroku settings:
 
 * You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will go into your environment as the twitter documentation instructs you.
 
-Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip.
+Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip by changing it to pip3.
 
-Run `pip install -r requirements.txt`
+Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
 
-Run `python ./manage.py runserver`
+Run `python ./manage.py runserver` or `python3 ./manage.py runserver`
 
 This defaults to port 8000, so open `localhost:8000` in your browser.
 
@@ -59,6 +59,10 @@ Holmes is a NaiveBayesClassifier, imported from [TextBlob](https://textblob.read
 By default, Holmes is trained on a sample of 2,000 tweets (1,000 positive, 1,000 negative).  These tweets were taken from the huge library available from Stanford University's [Sentiment140 project](http://help.sentiment140.com/for-students/).  The raw data from Sentiment140 can be formatted for use by Holmes by using the program in 'tweetmood/holmes_data/csv_formatting.py' - input the relevant file paths then run:
 ```
 python tweetmood/holmes_data/csv_fomatting.py
+```
+or
+```
+python3 tweetmood/holmes_data/csv_fomatting.py
 ```
 
 Holmes can be trained on different data sets.  This repository contains a larger formatted tweet sample set: replacing
@@ -87,9 +91,13 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run `pytest`. Usually running `python manage.py collectstatic --noinput` and `python -m textblob.download_corpora` is required to pass the tests.
+Run `pytest`. Usually running `python manage.py collectstatic --noinput`/`python3 manage.py collectstatic --noinput` and `python -m textblob.download_corpora`/`python3 -m textblob.download_corpora` is required to pass the tests.
 
 To see a test coverage table run `open htmlcov/index.html`
+
+To see code quality run `radon cc tweetmood/*.py -a`.
+
+To use the linter run `pylama`.
 
 The app uses a third-party API. Where required the tests mock calls to the API.
 
@@ -99,7 +107,7 @@ The application is deployed on [Heroku](https://tweet-mood.herokuapp.com/). The 
 
 ## Our Approach
 
-Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach.
+Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach. Our Trello board is [here](https://trello.com/b/fG7kmZBO/api-tweet)
 
 ## Contributing
 
