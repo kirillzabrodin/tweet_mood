@@ -18,8 +18,8 @@
       }
     },
 
-    _renderHolmesHeader: function(user_text, data) {
-      return `<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ${data.feeling} about ${user_text}:</h2>`
+    _renderHolmesHeader: function(user_text, holmes_res) {
+      return `<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ${holmes_res.feeling} about ${user_text}:</h2>`
     },
 
     _renderHolmesResult: function(holmes_res) {
