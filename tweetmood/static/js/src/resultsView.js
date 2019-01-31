@@ -5,7 +5,7 @@
   ResultsView.prototype = {
 
     render: function(user_text, watson_res, holmes_res) {
-      if (!holmes_res.feeling) {
+      if (holmes_res == {}) {
         return ErrorMessage.render(user_text)
       } else {
         return [
