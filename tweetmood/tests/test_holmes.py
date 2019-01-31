@@ -10,7 +10,7 @@ class HolmesUnitTests(TestCase):
 
     def test_feeling_supremely_positive(self):
         holmes = Holmes()
-        assert holmes.feeling(80) == "supremely positive"
+        assert holmes.feeling(75) == "supremely positive"
 
     def test_feeling_generally_positive(self):
         holmes = Holmes()
@@ -24,7 +24,7 @@ class HolmesUnitTests(TestCase):
         holmes = Holmes()
         assert holmes.feeling(40) == "rather negative"
 
-    def test_feeling_supremely_positive(self):
+    def test_feeling_overwhelmingly_negative(self):
         holmes = Holmes()
         assert holmes.feeling(20) == "overwhelmingly negative"
 
