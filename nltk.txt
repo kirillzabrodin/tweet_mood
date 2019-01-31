@@ -1,3 +1,6 @@
+brown
+punkt
 wordnet
-pros_cons
-reuters
+averaged_perceptron_tagger
+conll2000
+movie_reviews
