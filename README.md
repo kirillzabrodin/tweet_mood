@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c32cc2fc5d0d4a0cb97874d7c8a104e2)](https://app.codacy.com/app/kirillzabrodin/tweet_mood?utm_source=github.com&utm_medium=referral&utm_content=kirillzabrodin/tweet_mood&utm_campaign=Badge_Grade_Settings)
 # TweetMood   [![Build Status](https://travis-ci.com/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.com/kirillzabrodin/tweet_mood)   [![codecov](https://codecov.io/gh/kirillzabrodin/tweet_mood/branch/master/graph/badge.svg)](https://codecov.io/gh/kirillzabrodin/tweet_mood)   [![Maintainability](https://api.codeclimate.com/v1/badges/c36bb6965805cd5f41af/maintainability)](https://codeclimate.com/github/kirillzabrodin/tweet_mood/maintainability)
 An application for analysing the emotions in text
 
