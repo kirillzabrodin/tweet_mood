@@ -1,10 +1,8 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .watson import Watson
 from .holmes import Holmes
 from .tweeterpy import Tweeterpy
-import time
 from .response_formatter import ResponseFormatter
 from django.views.decorators.csrf import csrf_exempt
 
