@@ -24,7 +24,7 @@ class HolmesUnitTests(TestCase):
         holmes = Holmes()
         assert holmes.feeling(40) == "rather negative"
 
-    def test_feeling_supremely_positive(self):
+    def test_feeling_overwhelmingly_negative(self):
         holmes = Holmes()
         assert holmes.feeling(20) == "overwhelmingly negative"
 
