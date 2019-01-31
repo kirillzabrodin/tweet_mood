@@ -48,6 +48,7 @@ class Tweeterpy:
         result = self.tweets.Cursor(self.api.search, q=text, geocode="51.5074,0.1278,30km", lang='en',rpp='100',result_type='recent').items(100)
         raw_output = ''
         for tweet in result:
-            raw_output += " " + tweet.text
+            new_list = (raw_output, tweet.text)
+            raw_output = " ".join(new_list)
         output = self.format_output(raw_output)
         return output
