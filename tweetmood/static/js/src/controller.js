@@ -7,18 +7,16 @@
 
   Controller.prototype = {
     displayHomepage: function() {
-      var self = this
-      this._hideresults()
-      $('#london-input-form').html(this.homepageView.render())
-      this._listenForLondonFormSubmit()
+      $('#app').html(this.homepageView.render())
+      this._listenForFormSubmit()
     },
 
-    _listenForLondonFormSubmit: function() {
-      var self = this
-      $('#london-form').submit(function(e) {
+    _listenForFormSubmit: function() {
+      var form = $('#london-form')
+      form.submit((e) => {
         e.preventDefault()
-        self._displayLoadingButton()
-        self._postFormData($('#london-form'))
+        this._displayLoadingButton()
+        this._postFormData(form)
       })
     },
 
@@ -28,6 +26,7 @@
         url: form.attr('action'),
         data: form.serialize(),
         success: (data) => {
+          $(form).hide()
           this._hideInputForm()
           this._displayResults(data)
         }
@@ -35,29 +34,15 @@
     },
 
     _displayResults: function(data) {
-      var self = this
       var text = data.response
-      var response_dict = data.response_dict
-      var holmes_result = data.holmes_result
-      $('#results').show()
-      $('#results').html(self.resultsView.renderUsersInputText(text))
-      $('#holmes_results').append(self.resultsView.renderHolmesResult(holmes_result))
-      $('#results').append(self.resultsView.renderProgressDiv())
-      $('#progress-results').append(self.resultsView.renderProgressBars(response_dict))
+      var res_dict = data.response_dict
+      var holmes_res = data.holmes_result
+      $('#app').html(this.resultsView.render(text, res_dict, holmes_res))
     },
 
     _displayLoadingButton: function() {
-      var self = this
-      $('#button-spinner').addClass(self.homepageView.form.button.renderSpinnerClass())
-      $('#button-text').text(self.homepageView.form.button.renderLoadingText())
-    },
-
-    _hideInputForm: function() {
-      $("#london-input-form").hide()
-    },
-
-    _hideresults: function() {
-      $('#results').hide()
+      $('#button-spinner').addClass(this.homepageView.form.button.renderSpinnerClass())
+      $('#button-text').text(this.homepageView.form.button.renderLoadingText())
     }
 
   }
