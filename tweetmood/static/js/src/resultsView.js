@@ -38,7 +38,7 @@
         results.push(`<h1>${toneName} - ${toneScore}%</h1><div id='progress-results' class='progress'><div id='${toneName}' class='progress-bar-striped progress-bar-${toneName}' role='progressbar' style='width: ${toneScore}%' aria-valuenow='${toneScore}' aria-valuemin='0' aria-valuemax='100'></div>'</div>`)
       }
       return [
-        '<div id="progress=results">',
+        "<div id='progress=results'>",
         results.join(""),
         '</div>'
       ].join("")
