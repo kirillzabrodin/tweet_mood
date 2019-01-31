@@ -36,11 +36,11 @@ You will need some API keys, locally, in your Travis CI and/or Heroku settings:
 
 * You will also need a [Twitter key](https://github.com/kirillzabrodin/tweet_mood/blob/tweepy/tweetmood/tweeterpy.py) and any other required credentials for making requests to the twitter API. Those will go into your environment as the twitter documentation instructs you.
 
-Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip.
+Make sure you have python 3 and pip 3 installed. If you have python 2 installed as well change python to python3 in the code below. Do the same for pip by changing it to pip3.
 
-Run `pip install -r requirements.txt`
+Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
 
-Run `python ./manage.py runserver`
+Run `python ./manage.py runserver` or `python3 ./manage.py runserver`
 
 This defaults to port 8000, so open `localhost:8000` in your browser.
 
@@ -57,6 +57,10 @@ Holmes is a NaiveBayesClassifier, imported from [TextBlob](https://textblob.read
 By default, Holmes is trained on a sample of 2,000 tweets (1,000 positive, 1,000 negative).  These tweets were taken from the huge library available from Stanford University's [Sentiment140 project](http://help.sentiment140.com/for-students/).  The raw data from Sentiment140 can be formatted for use by Holmes by using the program in 'tweetmood/holmes_data/csv_formatting.py' - input the relevant file paths then run:
 ```
 python tweetmood/holmes_data/csv_fomatting.py
+```
+or
+```
+python3 tweetmood/holmes_data/csv_fomatting.py
 ```
 
 Holmes can be trained on different data sets.  This repository contains a larger formatted tweet sample set: replacing
@@ -85,7 +89,7 @@ The testing framework uses:
 
 As selenium is used, make sure you have Firefox installed.
 
-Run `pytest`. Usually running `python manage.py collectstatic --noinput` and `python -m textblob.download_corpora` is required to pass the tests.
+Run `pytest`. Usually running `python manage.py collectstatic --noinput`/`python3 manage.py collectstatic --noinput` and `python -m textblob.download_corpora`/`python3 -m textblob.download_corpora` is required to pass the tests.
 
 To see a test coverage table run `open htmlcov/index.html`
 
