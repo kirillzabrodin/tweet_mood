@@ -10,10 +10,23 @@ class Holmes:
     def __init__(self, classifier=trained_classifier):
         self.classifier = classifier
 
+    def feeling(self, number):
+        if number >= 75:
+            return "supremely positive"
+        elif 55 <= number < 75:
+            return "generally positive"
+        elif 45 <= number < 55:
+            return "ambivalent"
+        elif 25 <= number < 45:
+            return "rather negative"
+        else:
+            return "overwhelmingly negative"
+
     def holmes_classify(self, text):
         result = self.classifier.prob_classify(text)
         pos = int(round(result.prob('4'), 2) * 100)
         neg = int(round(result.prob('0'), 2) * 100)
         pwid = pos / 2
         nwid = neg / 2
-        return {"pos": pos, "neg": neg, "pwid": pwid, "nwid": nwid}
+        feeling = self.feeling(pos)
+        return {"pos": pos, "neg": neg, "pwid": pwid, "nwid": nwid, "feeling": feeling}
