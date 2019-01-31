@@ -11,7 +11,7 @@ describe("ResultsView", function() {
       var text = 'Test'
       var data = { "pos" : 50, "neg" : 50, "pwid" : 25, "nwid" : 25, "feeling" : "ambivalent" }
       var result = resultsView._renderHolmesHeader(text, data)
-      var expectedResult = '<h2 id="users-text">Holmes deduced that London feels ambivalent about Test:</h2>'
+      var expectedResult = '<h2 id="users-text" style="color:white;text-align:center">Holmes deduced that London feels ambivalent about Test:</h2>'
       expect(result).toEqual(expectedResult)
     })
   })
@@ -28,7 +28,7 @@ describe("ResultsView", function() {
   describe("_renderWatsonHeader", function() {
     it("returns Watson Header information in html", function() {
       var result = resultsView._renderWatsonHeader()
-      var expectedResult = '<h2>Meanwhile, Watson had a more nuanced take:</h2>'
+      var expectedResult = '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
       expect(result).toEqual(expectedResult)
     })
   })
