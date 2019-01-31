@@ -2,6 +2,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from unittest.mock import patch
+import time
 
 
 class HomepageTest(LiveServerTestCase):
@@ -32,6 +33,7 @@ class HomepageTest(LiveServerTestCase):
     def test_loading_button_text(self, mock_view_response):
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()

@@ -1,6 +1,5 @@
-import json
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
-from watson_developer_cloud.natural_language_understanding_v1 import Features, EntitiesOptions, KeywordsOptions, EmotionOptions
+from watson_developer_cloud.natural_language_understanding_v1 import Features, KeywordsOptions, EmotionOptions
 import os
 
 class Watson:
