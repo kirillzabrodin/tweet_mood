@@ -19,7 +19,7 @@
     },
 
     _renderHolmesHeader: function(user_text, data) {
-      return `<h2 id="users-text">Holmes has deduced that London feels ${data.feeling} about ${user_text}:</h2>`
+      return `<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ${data.feeling} about ${user_text}:</h2>`
     },
 
     _renderHolmesResult: function(holmes_res) {
@@ -27,7 +27,7 @@
     },
 
     _renderWatsonHeader: function(data) {
-        return '<h2>Meanwhile, Watson had a more nuanced take:</h2>'
+        return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
     },
 
     _renderWatsonResult: function(watson_res) {

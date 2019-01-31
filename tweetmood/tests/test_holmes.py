@@ -2,31 +2,26 @@ from django.test import TestCase
 import unittest
 from unittest import mock
 from unittest.mock import patch, Mock
-from ..holmes import Holmes
+from ..holmes import Holmes, feelings
 import nltk
 nltk.download('punkt')
 
 class HolmesUnitTests(TestCase):
 
     def test_feeling_supremely_positive(self):
-        holmes = Holmes()
-        assert holmes.feeling(75) == "supremely positive"
+        assert feelings(75) == "supremely positive"
 
     def test_feeling_generally_positive(self):
-        holmes = Holmes()
-        assert holmes.feeling(60) == "generally positive"
+        assert feelings(60) == "generally positive"
 
     def test_feeling_ambivalent(self):
-        holmes = Holmes()
-        assert holmes.feeling(50) == "ambivalent"
+        assert feelings(50) == "ambivalent"
 
     def test_feeling_rather_negative(self):
-        holmes = Holmes()
-        assert holmes.feeling(40) == "rather negative"
+        assert feelings(40) == "rather negative"
 
     def test_feeling_overwhelmingly_negative(self):
-        holmes = Holmes()
-        assert holmes.feeling(20) == "overwhelmingly negative"
+        assert feelings(20) == "overwhelmingly negative"
 
     def test_classify(self):
         mock_prob = Mock()
