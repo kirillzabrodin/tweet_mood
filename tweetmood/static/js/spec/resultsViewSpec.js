@@ -7,7 +7,7 @@ describe("ResultsView", function() {
 
   describe("render", function() {
 
-    describe("when holmes is not empty", function() {
+    describe("when holmes has feeling", function() {
 
       beforeEach(function() {
         userText = "foo"
@@ -47,7 +47,7 @@ describe("ResultsView", function() {
       })
     })
 
-    describe("when holmes is empty feeling", function() {
+    describe("when holmes does not have feeling", function() {
       beforeEach(function() {
         userText = "foo"
         watsonRes = {"joy": 10, "anger": 0}
