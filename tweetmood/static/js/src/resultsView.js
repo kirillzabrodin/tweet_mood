@@ -18,15 +18,15 @@
     },
 
     _renderHolmesHeader: function(text, data) {
-      return `<h2 id="users-text">Holmes has deduced that London feels ${data.feeling} about ${text}:</h2>`
+      return `<h2 id="users-text", style="color:white;text-align:center">Holmes deduced that London feels ${data.feeling} about ${text}:</h2>`
     },
 
     _renderHolmesResult: function(data) {
-      return `<table class='table table-hover'><thead><tr><td style='width:${data.pwid}%'></td><td class='bg-danger' style='width:${data.nwid}%'><h3>-ve ${data.neg}%</h3></td><td class='bg-success' style='width:${data.pwid}%'><h3>+ve ${data.pos}%</h3></td><td style='width:${data.nwid}%'></td></tr></thead></table>`
+      return `<table class='table table-borderless table-hover'><thead><tr><td class='table-secondary' style='width:${data.pwid}%'></td><td class='table-danger' style='width:${data.nwid}%'><h3>-ve ${data.neg}%</h3></td><td class='table-success' style='width:${data.pwid}%'><h3>+ve ${data.pos}%</h3></td><td class='table-secondary' style='width:${data.nwid}%'></td></tr></thead></table>`
     },
 
     _renderWatsonHeader: function(data) {
-        return '<h2>Meanwhile, Watson had a more nuanced take:</h2>'
+        return '<h2 style="color:white;text-align:center">Meanwhile, Watson had a more nuanced take:</h2>'
     },
 
     _renderProgressBars: function(data) {
