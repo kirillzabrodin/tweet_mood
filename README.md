@@ -91,6 +91,8 @@ To see a test coverage table run `open htmlcov/index.html`
 
 To see code quality run `radon cc tweetmood/*.py -a`.
 
+To use the linter run `pylama`.
+
 The app uses a third-party API. Where required the tests mock calls to the API.
 
 ## Deployment
