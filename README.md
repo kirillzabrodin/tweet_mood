@@ -89,6 +89,8 @@ Run `pytest`. Usually running `python manage.py collectstatic --noinput` and `py
 
 To see a test coverage table run `open htmlcov/index.html`
 
+To see code quality run `radon cc tweetmood/*.py -a`.
+
 The app uses a third-party API. Where required the tests mock calls to the API.
 
 ## Deployment
@@ -97,7 +99,7 @@ The application is deployed on [Heroku](https://tweet-mood.herokuapp.com/). The 
 
 ## Our Approach
 
-Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach.
+Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach. Our Trello board is [here](https://trello.com/b/fG7kmZBO/api-tweet)
 
 ## Contributing
 
