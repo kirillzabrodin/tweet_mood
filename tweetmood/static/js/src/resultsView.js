@@ -17,11 +17,11 @@
         return this._renderErrorMessage(user_text)
       }
     },
-
+    // done
     _renderHolmesHeader: function(user_text, holmes_res) {
       return `<h2 id="users-text", style="color:white;text-align:center">Holmes has deduced that London feels ${holmes_res.feeling} about ${user_text}:</h2>`
     },
-
+    // done
     _renderHolmesResult: function(holmes_res) {
       return `<table id='holmes-results' class='table table-hover'><thead><tr><td style='width:${holmes_res.pwid}%'></td><td class='bg-danger' style='width:${holmes_res.nwid}%'><h3>-ve ${holmes_res.neg}%</h3></td><td class='bg-success' style='width:${holmes_res.pwid}%'><h3>+ve ${holmes_res.pos}%</h3></td><td style='width:${holmes_res.nwid}%'></td></tr></thead></table>`
     },
