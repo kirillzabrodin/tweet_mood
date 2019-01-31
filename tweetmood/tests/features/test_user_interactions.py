@@ -25,9 +25,6 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.holmes.Holmes.holmes_classify')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_users_input_text_displayed_back(self, mock_tweets, mock_holmes, mock_analysis):
-        '''
-        users input text is displayed above results
-        '''
         mock_tweets.return_value = "Brexit tweets"
         mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
@@ -42,9 +39,6 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_twitter_no_results(self, mock_tweets, mock_analysis):
-        '''
-        error message displayed when twitter returns no results
-        '''
         mock_tweets.return_value = ""
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
@@ -59,9 +53,6 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.holmes.Holmes.holmes_classify')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_submit_text_with_watson_warning(self, mock_tweets, mock_holmes, mock_analysis):
-        '''
-        error message displayed when Watson returns error
-        '''
         mock_tweets.return_value = "Brexit tweets"
         mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
         mock_analysis.return_value = mock_watson_responses.mock_warnings_response()
