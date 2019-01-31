@@ -10,8 +10,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from mock_watson_responses import MockWatsonResponses
 from mock_holmes_responses import MockHolmesResponses
 
+
 mock_watson_responses = MockWatsonResponses()
 mock_holmes_responses = MockHolmesResponses()
+
 
 class UserInteractionTests(LiveServerTestCase):
 
