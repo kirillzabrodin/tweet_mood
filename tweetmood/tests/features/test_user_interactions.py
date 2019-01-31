@@ -4,6 +4,7 @@ from selenium.webdriver.firefox.options import Options
 from tweetmood.watson import Watson
 from tweetmood.holmes import Holmes
 import unittest
+import time
 from unittest import mock
 from unittest.mock import patch
 from selenium.webdriver.support.ui import WebDriverWait
@@ -32,11 +33,46 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
         users_text = selenium.find_element_by_id('users-text').text
         assert 'Test' in users_text
+
+    @patch('tweetmood.watson.Watson.send_for_analysis')
+    @patch('tweetmood.holmes.Holmes.holmes_classify')
+    @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
+    def test_watson_results_displayed_back(self, mock_tweets, mock_holmes, mock_analysis):
+        mock_tweets.return_value = "Brexit tweets"
+        mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
+        mock_analysis.return_value = mock_watson_responses.mock_successful_response()
+        selenium = self.selenium
+        selenium.get(self.live_server_url)
+        time.sleep(2)
+        text_field = selenium.find_element_by_name('text')
+        text_field.send_keys('Test')
+        selenium.find_element_by_name('analyse').click()
+        selenium.find_element_by_class_name('progress-bar-joy')
+        selenium.find_element_by_class_name('progress-bar-anger')
+        selenium.find_element_by_class_name('progress-bar-fear')
+        selenium.find_element_by_class_name('progress-bar-disgust')
+        selenium.find_element_by_class_name('progress-bar-sadness')
+
+    @patch('tweetmood.watson.Watson.send_for_analysis')
+    @patch('tweetmood.holmes.Holmes.holmes_classify')
+    @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
+    def test_holmes_results_displayed_back(self, mock_tweets, mock_holmes, mock_analysis):
+        mock_tweets.return_value = "Brexit tweets"
+        mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
+        mock_analysis.return_value = mock_watson_responses.mock_successful_response()
+        selenium = self.selenium
+        selenium.get(self.live_server_url)
+        time.sleep(2)
+        text_field = selenium.find_element_by_name('text')
+        text_field.send_keys('Test')
+        selenium.find_element_by_name('analyse').click()
+        selenium.find_element_by_id('holmes-results')
 
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
@@ -45,6 +81,7 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
@@ -60,6 +97,7 @@ class UserInteractionTests(LiveServerTestCase):
         mock_analysis.return_value = mock_watson_responses.mock_warnings_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
+        time.sleep(2)
         text_field = selenium.find_element_by_name('text')
         text_field.send_keys('Test')
         selenium.find_element_by_name('analyse').click()
