@@ -11,6 +11,7 @@ from mock_watson_responses import MockWatsonResponses
 from mock_holmes_responses import MockHolmesResponses
 
 mock_watson_responses = MockWatsonResponses()
+mock_holmes_responses = MockHolmesResponses()
 
 class UserInteractionTests(LiveServerTestCase):
 
@@ -23,9 +24,12 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.holmes.Holmes.holmes_classify')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
-    def test_submit_text_with_mock_api(self, mock_tweets, mock_holmes, mock_analysis):
+    def test_users_input_text_displayed_back(self, mock_tweets, mock_holmes, mock_analysis):
+        '''
+        users input text is displayed above results
+        '''
         mock_tweets.return_value = "Brexit tweets"
-        mock_holmes.return_value = {"pos": 50, "neg": 50, "pwid": 25, "nwid": 25, "feeling": "ambivalent"}
+        mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
@@ -38,6 +42,9 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.watson.Watson.send_for_analysis')
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_twitter_no_results(self, mock_tweets, mock_analysis):
+        '''
+        
+        '''
         mock_tweets.return_value = ""
         mock_analysis.return_value = mock_watson_responses.mock_successful_response()
         selenium = self.selenium
@@ -53,7 +60,7 @@ class UserInteractionTests(LiveServerTestCase):
     @patch('tweetmood.tweeterpy.Tweeterpy.get_tweets')
     def test_submit_text_with_watson_warning(self, mock_tweets, mock_holmes, mock_analysis):
         mock_tweets.return_value = "Brexit tweets"
-        mock_holmes.return_value = {"pos": 50, "neg": 50, "pwid": 25, "nwid": 25, "feeling": "ambivalent"}
+        mock_holmes.return_value = mock_holmes_responses.mock_ambivalent_response()
         mock_analysis.return_value = mock_watson_responses.mock_warnings_response()
         selenium = self.selenium
         selenium.get(self.live_server_url)
