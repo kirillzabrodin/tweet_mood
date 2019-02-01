@@ -16,17 +16,17 @@ python3 tweetmood/holmes_data/csv_fomatting.py
 ```
 
 Holmes can be trained on different data sets.  This repository contains a larger formatted tweet sample set: replacing
-```
+```python
 with open('tweetmood/holmes_data/reformatted_small_train.csv', 'r') as train:
 ```
 in 'tweetmood/holmes.py' with
-```
+```python
 with open('tweetmood/holmes_data/reformatted_train.csv', 'r') as train:
 ```
 will train Holmes on a data set of 10,000 tweets - please note this additional training takes more time when deploying the app.
 
 To test the accuracy of Holmes once training has been completed, Holmes can be tested against a sample test data set:
-```
+```python
 with open('tweetmood/holmes_data/formatted_test.csv', 'r') as test:
   classifier.accuracy(test))
 ```
