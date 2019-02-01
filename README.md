@@ -1,6 +1,8 @@
 # TweetMood   [![Build Status](https://travis-ci.com/kirillzabrodin/tweet_mood.svg?branch=master)](https://travis-ci.com/kirillzabrodin/tweet_mood)   [![codecov](https://codecov.io/gh/kirillzabrodin/tweet_mood/branch/master/graph/badge.svg)](https://codecov.io/gh/kirillzabrodin/tweet_mood)   [![Maintainability](https://api.codeclimate.com/v1/badges/c36bb6965805cd5f41af/maintainability)](https://codeclimate.com/github/kirillzabrodin/tweet_mood/maintainability)   [![Codacy Badge](https://api.codacy.com/project/badge/Grade/53289efff5ef47be9ec24611b0a09f27)](https://www.codacy.com/app/kirillzabrodin/tweet_mood?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kirillzabrodin/tweet_mood&amp;utm_campaign=Badge_Grade)   [![Known Vulnerabilities](https://snyk.io/test/github/kirillzabrodin/tweet_mood/badge.svg)](https://snyk.io/test/github/kirillzabrodin/tweet_mood)
 An application for analysing the emotions in tweets from around London.
 
+![Front Page of App](documents/front_page.png)
+
 ### [Team](https://github.com/kirillzabrodin/tweet_mood#team) |  [User stories](https://github.com/kirillzabrodin/tweet_mood#user-stories) |  [Getting started](https://github.com/kirillzabrodin/tweet_mood#getting-started) |  [Usage](https://github.com/kirillzabrodin/tweet_mood#usage) |  [Testing](https://github.com/kirillzabrodin/tweet_mood#testing) |   [Deployment](https://github.com/kirillzabrodin/tweet_mood#deployment) |   [Our approach](https://github.com/kirillzabrodin/tweet_mood#our-approach) |  [Contributing](https://github.com/kirillzabrodin/tweet_mood#contributing)
 
 ## Team
@@ -83,7 +85,7 @@ The application is deployed on [Heroku](https://tweet-mood.herokuapp.com/). The 
 
 Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach. Our Trello board is [here](https://trello.com/b/fG7kmZBO/api-tweet).
 
-![Alt text](documents/trello_board.png)
+![Trello Board Example](documents/trello_board.png)
 
 ## Contributing
 
