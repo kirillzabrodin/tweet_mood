@@ -1,3 +1,5 @@
+## Holmes and Watson
+
 Holmes is an example of a NaiveBayesClassifier, imported from [TextBlob](https://textblob.readthedocs.io/en/dev/index.html#) / [NLTK](http://www.nltk.org/) and subject to supervised machine learning in order to classify inputted text as positive or negative.
 
 Classifiers work by calculating the probability of inputted text belonging to a particular class.  In order to make this calculation, the classifier must be 'trained' by being passed examples of text which belongs in the desired classes: for example, tweets which have already been classified as positive or negative.  Larger training sets result in more accurate classification, but training and analysing can take longer.
