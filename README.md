@@ -27,6 +27,8 @@ so I can see what people feel about my topic,
 I would like to be able to see the analysis
 ```
 
+![Results Example](documents/results_example.png)
+
 ## Getting started
 Clone the repo with `git clone this_project_url`.
 
