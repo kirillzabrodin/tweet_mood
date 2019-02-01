@@ -83,7 +83,7 @@ The application is deployed on [Heroku](https://tweet-mood.herokuapp.com/). The 
 
 Read our [manifesto](https://github.com/kirillzabrodin/tweet_mood/wiki/Manifesto) to learn about our approach. Our Trello board is [here](https://trello.com/b/fG7kmZBO/api-tweet).
 
-[[https://github.com/kirillzabrodin/tweet_mood/blob/README/documents/trello_board.png|alt=trello_board]]
+![Alt text](documents/trello_board.png)
 
 ## Contributing
 
