@@ -9,8 +9,9 @@ body {
   width: 100%;
 }
 
-#london-input-form {
-  margin-top: 200px;
+#input-form {
+  margin-top: 145px;
+  padding: 10px;
   width: 100%;
 }
 

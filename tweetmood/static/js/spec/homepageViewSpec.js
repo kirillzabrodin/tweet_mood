@@ -10,8 +10,9 @@ describe("HomepageView", function() {
 
   describe("render", function() {
     it("calls on the form to render", function() {
+      spyOn(Form, "render")
       homepageView.render()
-      expect(form.render).toHaveBeenCalled()
+      expect(Form.render).toHaveBeenCalled()
     })
   })
 

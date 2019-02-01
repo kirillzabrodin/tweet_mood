@@ -40,8 +40,8 @@
     },
 
     _displayLoadingButton: function() {
-      $('#button-spinner').addClass(this.homepageView.form.button.renderSpinnerClass())
-      $('#button-text').text(this.homepageView.form.button.renderLoadingText())
+      $('#button-spinner').addClass(Button.renderSpinnerClass())
+      $('#button-text').text(Button.renderLoadingText())
     }
 
   }

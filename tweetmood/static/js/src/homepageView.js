@@ -1,12 +1,10 @@
 (function(exports) {
 
-  function HomepageView(form = new Form) {
-    this.form = form
-  }
+  function HomepageView(){}
 
   HomepageView.prototype = {
     render: function() {
-      return this.form.render()
+      return Form.render()
     }
   }
 
