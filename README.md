@@ -52,7 +52,7 @@ At the moment whatever you type in will be analysed and the prominent mood displ
 
 ### Holmes and Watson
 
-Holmes and Watson are two distinct sentiment analysers - find more information on them [here](https://github.com/kirillzabrodin/tweet_mood/blob/docs_folder/documents/holmes_and_watson.md).
+Holmes and Watson are two distinct sentiment analysers - find more information on them [here](https://github.com/kirillzabrodin/tweet_mood/blob/docs_folder/documents/HolmesAndWatson.md).
 
 ## Testing
 
