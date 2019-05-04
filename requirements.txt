@@ -9,7 +9,7 @@ coverage==4.5.2
 cssselect==1.0.3
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==2.1.5
+Django==2.1.6
 django-cors-headers==2.4.0
 django-heroku==0.3.1
 django-toolbelt==0.0.1
@@ -48,7 +48,7 @@ six==1.12.0
 static3==0.7.0
 textblob==0.15.2
 tweepy==3.7.0
-urllib3==1.24.1
+urllib3==1.25.2
 watson-developer-cloud==2.5.4
 websocket-client==0.48.0
 whitenoise==4.1.2
