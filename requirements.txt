@@ -9,7 +9,7 @@ coverage==4.5.2
 cssselect==1.0.3
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==2.1.6
+Django==2.1.8
 django-cors-headers==2.4.0
 django-heroku==0.3.1
 django-toolbelt==0.0.1
